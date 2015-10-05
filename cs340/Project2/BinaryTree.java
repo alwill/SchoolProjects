@@ -1,4 +1,6 @@
-package com.company;
+package cs340projects;
+
+//package com.company;
 
 /**
  * Created by AlexWill on 9/24/15.
@@ -11,6 +13,28 @@ public class BinaryTree {
     {
         this.root = null;
     }
+    
+    public String bTreeSearch(String value)
+    {
+        Node current = root;
+        
+        while(current != null)
+        {
+            if(value.equalsIgnoreCase(current.value))
+            {
+                return current.value;
+            }
+            else if(current.value.compareToIgnoreCase(value) > 0)
+            {
+                current = current.left;
+            }
+            else
+            {
+                current = current.right;
+            }
+        }
+        return null;
+    }
 
     public void insert(String data)
     {
@@ -18,6 +42,7 @@ public class BinaryTree {
         if(root == null)
         {
             root = node;
+            return;
         }
 
         Node current = root;
@@ -46,6 +71,15 @@ public class BinaryTree {
                 }
             }
 
+        }
+    }
+    public void display(Node root)
+    {
+        if(root!= null)
+        {
+            display(root.left);
+            System.out.println(" " + root.value);
+            display(root.right);
         }
     }
 
