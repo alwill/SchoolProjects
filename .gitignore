@@ -1,3 +1,5 @@
 *.~vsdx
+*.rdg
+*.wmv
+*_log.txt
 
-*.db
