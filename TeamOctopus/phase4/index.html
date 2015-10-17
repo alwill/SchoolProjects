@@ -3,14 +3,15 @@
 <head>
     <title>TV Guru</title>
     <link href="css/main.css" rel="stylesheet">
+    <link href="css/homepage.css" rel="stylesheet">
 </head>
 <body> 
 <!-- Navbar -->        
     <div class="navbar">
         <nav class="nav">
             <ul class="nav-items">
-                <li>
-                    <a class="nav-brand" href="index.html">TV Guru</a>
+                <li class="nav-brand">
+                    <a href="index.html">TV Guru</a>
                 </li>
                 <li>
                     <a href="account.html">My Account</a>
@@ -34,7 +35,7 @@
                         <input type="text" class="search_field" name="title"
                         placeholder="Search for a movie or series"/>
                         <input type="image" class="search_btn" name="btn" 
-                        src="icons/mag_glass.svg"/>
+                        src="images/mag_glass.svg"/>
                     </form>
                 </li>
             </ul>
@@ -45,8 +46,11 @@
 <!-- Main -->
     <main class="main">
         <div class="title-banner">
-            <p class="attn">TV Guru, The Best Place to Get Your TV Needs!</p>
-        </div>
+            <img id="logo-img" src="images/guru.png">
+            <p class="attn">The Best Place to Get Your TV Needs!</p>
+        </div>        
+    </main>
+<!-- End of Main -->
     <!-- TV Guide -->
         <div class="container">
             <div class="guide">
@@ -117,7 +121,36 @@
             </div>
         </div>
     <!-- End of TV Guide -->
-    </main>
-<!-- End of Main -->
+    <!-- Trending Sidebar -->
+        <div class="container">
+            <div class="sidebar-container">
+            <p class="attn">Trending Movies<br>and<br>Series</p>
+                <div class="trending-item">
+                    <a href="#">Goosebumps</a>
+                    <a href="#"><img id="trending-img" src="images/goosebumps.jpg" alt="Goose Bumps"/></a>
+                </div>
+                <br>
+                <div class="trending-item">            
+                    <a href="#">Martian</a>
+                    <a href="#"><img id="trending-img" src="images/martian.jpg" alt="Martian"/></a>
+                </div>
+                <br>
+                <div class="trending-item">
+                    <a href="#">Quantico</a>
+                    <a href="#"><img id="trending-img" src="images/quantico.jpg" alt="Quantico"/></a>
+                </div>
+                <br>
+                <div class="trending-item">
+                    <a href="#">The Good Wife</a>
+                    <a href="#"><img id="trending-img" src="images/thegoodwife.jpg" alt="The Good Wife"/></a>
+                </div>
+                <br>
+                <div class="trending-item">
+                    <a href="#">The Flash</a>
+                    <a href="#"><img id="trending-img" src="images/theflash.jpg" alt="The Flash"/></a>
+                </div>
+            </div>
+        </div>
+    <!-- End of Trending Sidebar -->
 </body>
 </html>

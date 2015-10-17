@@ -1,0 +1,105 @@
+/* Table Rules */
+.guide {
+    float: left;
+    position: relative;
+    left: 75px;
+    top: 75px;
+    padding: 15px;
+    background-color: #645B57;
+    border-radius: 10px;
+}
+
+.guide-network {
+    display: block;
+}
+
+.guide-channel {
+    font-size: 12px;
+}
+
+.guide-item {
+    text-align: center;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 16px;
+}
+
+thead {
+    background-color: #4E4845;
+    color: #312722;
+}
+th {
+    padding: 10px;
+    padding-right: 10px;
+    vertical-align: middle;
+    border-right: 1px solid;
+}
+
+th:last-child {
+    border-right: 0px;
+}
+
+tbody tr:nth-child(even){
+    background-color: #645B57;
+}
+
+td:first-child {
+    border-right: 1px solid;
+}
+
+td:last-child {
+    border-right: 0px;
+}
+
+table a {
+    text-decoration: none;
+    color: #434343;
+}
+
+ table a:visited {
+    color: #434343;
+}
+/* End of Table Rules */
+
+/* Trending Sidebar */
+.sidebar-container {
+    float: right;
+    position: relative;
+    padding-right: 5px;
+    right: 85px;
+    top: -180px;
+    background-color: #645B57;
+    border-radius: 10px;
+}
+
+.trending-item {
+    float: right;
+}
+
+.trending-item a {
+    line-height: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #312722;
+}
+
+#trending-img {
+    height: 140px;
+    width: 90px;
+}
+
+#logo-img {
+    position: relative;
+    left: 100px;
+    height: 160px;
+    width: 110px;
+}
+
+/* End of Trending Sidebar */

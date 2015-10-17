@@ -1,16 +1,21 @@
 /* Navbar rules */
+:root {
+    background-color: #393431;
+}
 .navbar {
-    background-color: #627178;
-    width: 100%;
+    background-color: #645B57;
+    width: 90%;
     float: left;
-    margin: -10px;
-    border-bottom: 1px solid transparent;
+    margin: 35px;    
     display: block;
+    border-radius: 25px;
 }
 
 .nav-brand {
     font-size: 22px;
+    line-height: 20px;
 }
+
 .nav-items {
     list-style: none;
 }
@@ -18,38 +23,33 @@
 .nav-items li a {
     text-decoration: none;
     float: left;
-    margin: -10px 10px 0px 10px;
-    padding-right: 15px;
-    padding-left: 15px;
-    padding-top: 10px;
-    line-height: 20px;
-    height: 40px;
-    border: 1px solid transparent;
-}
-.nav-items li a:hover {
-    background-color: #0C1D24;
+    margin: 0px 5px 10px 5px;
+    padding-right: 8px;
+    padding-left: 8px;
+    height: 20px;
 }
 
 .nav-search {
-    background-color: #494B4C;
+    background-color: #dedede;
     border-radius: 100px;
     width: 230px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .search_field {
     float: left;
     line-height: 20px;
     padding-top: 5px;
-    background: transparent;
     border: 0;
+    background: transparent;
+    outline: none;
 }
 
 /* magnifying glass location */
 .nav-search .search_btn {
     position: absolute;
-    top: 30px;
-    right: 135px;
+    top: 75px;
+    right: 185px;
 }
 
 .search_btn {
@@ -66,31 +66,40 @@
 }
 
 .navbar a {
-    color: #434343;
+    color: #17211D;
 }
 
 .navbar a:hover {
-    color: #434343;
+    color: #3A4340;
 }
 
 .navbar a:visited {
-    color: #434343;
+    color: #17211D;
 }
 
 .navbar input {
-    color: #434343;;
+    color: #17211D;;
 }
 
 /* End of Navbar Rules */
 
-.main {
-    display: block;
-    padding: 50px;
+/* Main content rules */
+.title-banner {
+    position: relative;
+    left: 25%;
+    display: inline-block;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #645B57;
 
 }
+
+.title-banner img {
+}
+
 .container {
-    display: block;
-    padding: 15px; 
+    display: inline;
+    padding: 25px; 
 }
 
 .attn {
@@ -98,64 +107,6 @@
     font-size: 20px;
     font-weight: 450;
     line-height: 30px;
+    color: #312722;
 }
-
-.guide {
-
-}
-
-.guide-network {
-    display: block;
-}
-
-.guide-channel {
-    font-size: 12px;
-}
-
-.guide-item {
-    text-align: center;
-    border-bottom: 1px solid;
-    border-right: 1px solid;
-
-}
-
-table {
-    border-collapse: separate;
-    border-spacing: 0;
-    font-size: 16px;
-}
-
-thead {
-    background-color: #627178;
-    color: #0C1D24;
-}
-th {
-    padding: 10px;
-    padding-right: 10px;
-    vertical-align: middle;
-    border-right: 1px solid;
-}
-
-th:last-child {
-    border-right: 0px;
-}
-
-tbody tr:nth-child(even){
-    background-color: #f0f0f2;
-}
-
-td:first-child {
-    border-right: 1px solid #627178;
-}
-td:last-child {
-    border-right: 0px;
-}
-
-table a {
-    text-decoration: none;
-    color: #434343;
-}
- table a:visited {
-    color: #434343;
-}
-
+/* End of main Content Rules */
