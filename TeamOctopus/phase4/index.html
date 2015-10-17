@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TV Guru</title>
+    <link href="css/main.css" rel="stylesheet">
+</head>
+<body> 
+<!-- Navbar -->        
+    <div class="navbar">
+        <nav class="nav">
+            <ul class="nav-items">
+                <li>
+                    <a class="nav-brand" href="index.html">TV Guru</a>
+                </li>
+                <li>
+                    <a href="account.html">My Account</a>
+                </li>
+                <li>
+                    <a href="top_shows.html">Top Shows Airing</a>
+                </li>
+                <li>
+                    <a href="showtimes.html">Theatre Showtimes</a>
+                </li>
+                <li>
+                    <a href="sports.html">Sports</a>
+                </li>
+                <li>
+                    <div class="nav-login">
+                        <a href="login.html">Login</a>
+                    </div>
+                </li>
+                <li>
+                    <form class="nav-search" action="search.html" method="get">
+                        <input type="text" class="search_field" name="title"
+                        placeholder="Search for a movie or series"/>
+                        <input type="image" class="search_btn" name="btn" 
+                        src="icons/mag_glass.svg"/>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </div>
+<!-- End of Navbar -->
+
+<!-- Main -->
+    <main class="main">
+        <div class="title-banner">
+            <p class="attn">TV Guru, The Best Place to Get Your TV Needs!</p>
+        </div>
+    <!-- TV Guide -->
+        <div class="container">
+            <div class="guide">
+                <p class="attn">What's Currently On?</p>
+                <table>
+                    <thead>
+                        <th scope="col"><a href="#">&#9664;</a></th>
+                        <th scope="col">7:00PM</th>
+                        <th scope="col">7:30PM</th>
+                        <th scope="col">8:00PM</th>
+                        <th scope="col">8:30PM</th>
+                        <th scope="col">9:00PM</th>
+                        <th scope="col">9:30PM</th>
+                        <th scope="col">10:00PM</th>
+                        <th scope="col"><a href="#">&#9654;</a></th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong class="guide-network">CBS</strong>
+                                <span class="guide-channel">Channel 2</span>
+                            </td>
+                            <td class="guide-item" colspan="2">Madam Secretary</td>
+                            <td class="guide-item" colspan="2">The Good Wife</td>
+                            <td class="guide-item" colspan="2">CSI: Cyber</td>
+                            <td class="guide-item" colspan="2">Forty Eight Hours</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong class="guide-network">ABC</strong>
+                                <span class="guide-channel">Channel 30</span>
+                            </td>
+                            <td class="guide-item" colspan="2">Once Upon A Time</td>
+                            <td class="guide-item" colspan="2">Blood and Oil</td>
+                            <td class="guide-item" colspan="2">Quantico</td>
+                            <td class="guide-item" colspan="2">Forty Eight Hours</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong class="guide-network">NBC</strong>
+                                <span class="guide-channel">Channel 5</span>
+                            </td>
+                            <td class="guide-item" colspan="5">Football: Saints at Cowboys</td>
+                            <td class="guide-item" colspan="3">Local Programming</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong class="guide-network">FOX</strong>
+                                <span class="guide-channel">Channel 4</span>
+                            </td>
+                            <td class="guide-item" colspan="2">Brookly Nine-Nine</td>
+                            <td class="guide-item" colspan="2">Family Guy</td>
+                            <td class="guide-item" colspan="2">The Last Man on Earth</td>
+                            <td class="guide-item" colspan="2">Local Programming</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong class="guide-network">PBS</strong>
+                                <span class="guide-channel">Channel 11</span>
+                            </td>
+                            <td class="guide-item" colspan="2">Indian Summers On Masterpiece</td>
+                            <td class="guide-item" colspan="1">The Widower</td>
+                            <td class="guide-item" colspan="2">Ask This Old House</td>
+                            <td class="guide-item" colspan="3">Hometime</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    <!-- End of TV Guide -->
+    </main>
+<!-- End of Main -->
+</body>
+</html>
