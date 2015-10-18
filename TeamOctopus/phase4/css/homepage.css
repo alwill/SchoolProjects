@@ -2,7 +2,7 @@
 .guide {
     float: left;
     position: relative;
-    left: 75px;
+    left: 5%;
     top: 75px;
     padding: 15px;
     background-color: #645B57;
@@ -59,11 +59,11 @@ td:last-child {
 
 table a {
     text-decoration: none;
-    color: #434343;
+    color: #312722;
 }
 
  table a:visited {
-    color: #434343;
+    color: #312722;
 }
 /* End of Table Rules */
 
@@ -72,7 +72,7 @@ table a {
     float: right;
     position: relative;
     padding-right: 5px;
-    right: 85px;
+    right: 8%;
     top: -180px;
     background-color: #645B57;
     border-radius: 10px;

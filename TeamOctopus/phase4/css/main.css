@@ -47,9 +47,9 @@
 
 /* magnifying glass location */
 .nav-search .search_btn {
-    position: absolute;
-    top: 75px;
-    right: 185px;
+    position: relative;
+    top: 10px;
+    left: 30px;
 }
 
 .search_btn {
@@ -86,7 +86,7 @@
 /* Main content rules */
 .title-banner {
     position: relative;
-    left: 25%;
+    left: 40%;
     display: inline-block;
     padding: 25px;
     border-radius: 10px;
@@ -95,6 +95,7 @@
 }
 
 .title-banner img {
+
 }
 
 .container {
