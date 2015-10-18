@@ -1,20 +1,31 @@
-/* Table Rules */
-.guide {
+/* Banner Rules */
+#title-banner {
+    position: relative;
+    left: 35%;
+    display: inline-block;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #645B57;
+}
+
+#logo-img {
+    position: relative;
+    left: 100px;
+    height: 160px;
+    width: 110px;
+}
+/* End of Banner Rules */
+
+/* Guide Rules */
+#guide {
     float: left;
     position: relative;
     left: 5%;
     top: 75px;
     padding: 15px;
+    margin-bottom: 35px;
     background-color: #645B57;
     border-radius: 10px;
-}
-
-.guide-network {
-    display: block;
-}
-
-.guide-channel {
-    font-size: 12px;
 }
 
 .guide-item {
@@ -28,6 +39,7 @@ table {
     border-collapse: separate;
     border-spacing: 0;
     font-size: 16px;
+    color: #312722;
 }
 
 thead {
@@ -68,7 +80,7 @@ table a {
 /* End of Table Rules */
 
 /* Trending Sidebar */
-.sidebar-container {
+#sidebar-container {
     float: right;
     position: relative;
     padding-right: 5px;
@@ -90,16 +102,67 @@ table a {
     color: #312722;
 }
 
-#trending-img {
+.trending-img {
     height: 140px;
     width: 90px;
 }
+/* End of Trending Sidebar */
 
-#logo-img {
-    position: relative;
-    left: 100px;
-    height: 160px;
-    width: 110px;
+/* New Shows Airing Box*/
+#new-shows-box {
+    float: left;
+    display: block;
+    position: absolute;
+    top: 120px;
+    left: 5%;
+    padding: 10px 10px 10px 10px;
+    background-color: #645B57;
+    border-radius: 10px;
 }
 
-/* End of Trending Sidebar */
+#new-shows-box ul {
+    list-style: none;
+}
+
+.new-show {
+    color: #312722;
+}
+/* End of New Shows Airing Box */
+
+/* What Twitter is Saying Box */
+#trending-twitter-box {
+    float: left;
+    display: block;
+    position: relative;
+    top: 85px;
+    left: 10%;
+    padding: 10px 35px 10px 0px;
+    background-color: #645B57;
+    border-radius: 10px;
+}
+
+.trending-twitter-tweet {
+    list-style: none;
+    color: #312722;
+    padding: 0px;
+    margin: 0px;
+}
+/* End of What Twitter is Saying Box */
+
+/* Misc */
+.over-text {
+    display: block;
+}
+
+.under-text {
+    font-size: 11px;
+    line-height: 8px;
+}
+/* Enf of Misc */
+
+/* Overwrite Footer Bottom*/
+#footer {
+    bottom: -350px;
+}
+/* End of Footer */
+
