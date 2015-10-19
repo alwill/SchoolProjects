@@ -1,7 +1,13 @@
-package com.company;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cs340projects;
 
 /**
- * Created by AlexWill on 10/18/15.
+ *
+ * @author willa
  */
 import java.util.*;
 import java.io.*;
@@ -34,13 +40,19 @@ class graph{
         String l;
         while ((l = inputStream.readLine()) != null) {
             sample = l.split(":");
-            addNode(dGraph,sample[0]);
-            String[] right = sample[1].split(" ");
-            for(String key : right)
+            if(sample.length > 1)
             {
-                addEdge(dGraph,sample[0], key);
+                addNode(dGraph,sample[0]);
+                String[] right = sample[1].replaceAll("(^\\s+|\\s+$)", "").split("\\s+");
+                for(String key : right)
+                {
+                    addEdge(dGraph,sample[0], key);
+                }
             }
-
+            else
+            {
+                addNode(dGraph,sample[0]);
+            }
         }
         inputStream.close();
         for (String name: dGraph.keySet()){
@@ -53,7 +65,8 @@ class graph{
         }
     }
 
-    public void reverseGraph() {
+    public void reverseGraph()
+    {
 
         for (String node: dGraph.keySet())
             addNode(revGraph,node);
@@ -66,5 +79,47 @@ class graph{
                 addEdge(revGraph,endpoint, node);
 
     }
+    
+    public void dfsearch(String node,Map<String, Set<String>> graph,List<String> order,Set<String> visit, Set<String> searched)
+    {
+        if(visit.contains(node))
+        {
+            if(searched.contains(node))
+            {
+                return;
+            }
+            else
+            {
+                System.out.println("This graph contains a cycle.");
+                System.exit(0);
+            }
+        }
+        visit.add(node);
+        
+        for(String edges : graph.get(node))
+        {
+            System.out.println(node + " stuff: " + graph.get(node).toString());
+            System.out.println("edge: " + edges);
+            dfsearch(edges,graph,order,visit,searched);
+        }
+        
+        order.add(node);
+        searched.add(node);
+    }
+    
+    public List<String> topoSort()
+    {
+        List<String> topoSorted = new ArrayList<String>();
+        Set<String> visit = new HashSet<String>();
+        Set<String> searched = new HashSet<String>();
+        reverseGraph();
+        for(String node : revGraph.keySet())
+        {
+            dfsearch(node,revGraph,topoSorted, visit, searched);
+        }
+        
+        return topoSorted;
+    }
+    
 
 }
