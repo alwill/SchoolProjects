@@ -1,14 +1,13 @@
 :root {
-    background-color: #393431;
+    background-color: #ffffff;
 }
 
 /* Navbar rules */
 #navbar {
-    background-color: #645B57;
-    width: 90%;
+    background-color: #dedede;
+    min-width: 90%;
     float: left;
-    margin: 35px;    
-    display: block;
+    margin: 35px;
     border-radius: 25px;
 }
 
@@ -38,9 +37,10 @@
 }
 
 #search_field {
-    float: left;
     line-height: 20px;
     padding-top: 5px;
+    position: relative;
+    bottom: 5px;
     border: 0;
     background: transparent;
     outline: none;
@@ -49,8 +49,7 @@
 /* magnifying glass */
 #search_btn {
     position: relative;
-    top: 10px;
-    left: 30px;
+    left: 5px;
     width: 15px;
     font-size: 30px;
     line-height: 30px;
@@ -89,7 +88,7 @@ html, body {
 
 #wrapper {
     min-height: 100%;
-    position: relative;
+    min-width: 100%;
 }
 
 #content {
@@ -97,12 +96,11 @@ html, body {
 }
 
 #footer {
-    width: 90%;
+    min-width: 90%;
+    float: left;
     margin: 35px;
-    position: absolute;
-    bottom: 100px;
-    left: 0;    
-    background-color: #645B57; 
+    position: relative;
+    background-color: #dedede; 
     border-radius: 10px;
 }
 

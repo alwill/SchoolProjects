@@ -1,16 +1,17 @@
 /* Banner Rules */
 #title-banner {
     position: relative;
-    left: 35%;
+    right: 25%;
+    top: 100px;
     display: inline-block;
     padding: 25px;
     border-radius: 10px;
-    background-color: #645B57;
+    background-color: #dedede;
 }
 
 #logo-img {
     position: relative;
-    left: 100px;
+    left: 125px;
     height: 160px;
     width: 110px;
 }
@@ -21,10 +22,10 @@
     float: left;
     position: relative;
     left: 5%;
-    top: 75px;
+    top: 475px;
     padding: 15px;
     margin-bottom: 35px;
-    background-color: #645B57;
+    background-color: #dedede;
     border-radius: 10px;
 }
 
@@ -83,10 +84,10 @@ table a {
 #sidebar-container {
     float: right;
     position: relative;
+    right: 10%;
+    top: 475px;
     padding-right: 5px;
-    right: 8%;
-    top: -180px;
-    background-color: #645B57;
+    background-color: #dedede;
     border-radius: 10px;
 }
 
@@ -111,12 +112,11 @@ table a {
 /* New Shows Airing Box*/
 #new-shows-box {
     float: left;
-    display: block;
-    position: absolute;
-    top: 120px;
-    left: 5%;
+    position: relative;
+    right: 43%;
+    top: 875px;
     padding: 10px 10px 10px 10px;
-    background-color: #645B57;
+    background-color: #dedede;
     border-radius: 10px;
 }
 
@@ -131,13 +131,12 @@ table a {
 
 /* What Twitter is Saying Box */
 #trending-twitter-box {
-    float: left;
-    display: block;
+    float: right;
     position: relative;
-    top: 85px;
-    left: 10%;
+    top: 540px;
+    right: 25%;
     padding: 10px 35px 10px 0px;
-    background-color: #645B57;
+    background-color: #dedede;
     border-radius: 10px;
 }
 
@@ -162,7 +161,7 @@ table a {
 
 /* Overwrite Footer Bottom*/
 #footer {
-    bottom: -350px;
+    top: 550px;
 }
 /* End of Footer */
 
