@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TV Guru</title>
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/searchpage.css" rel="stylesheet">
+</head>
+<body>
+<div id="wrapper">
+<!-- Header -->
+    <div id="header">
+    <!-- Navbar -->        
+        <nav id="navbar">
+            <ul id="nav-items">
+                <li id="nav-brand">
+                    <a href="index.html">TV Guru</a>
+                </li>
+                <li>
+                    <a href="account.html">My Account</a>
+                </li>
+                <li>
+                    <a href="top_shows.html">Top Shows Airing</a>
+                </li>
+                <li>
+                    <a href="showtimes.html">Theatre Showtimes</a>
+                </li>
+                <li>
+                    <a href="sports.html">Sports</a>
+                </li>
+                <li>
+                    <div id="nav-login">
+                        <a href="login.html">Login</a>
+                    </div>
+                </li>
+                <li>
+                    <form id="nav-search" action="html/search.html" method="post">
+                        <input type="text" id="search_field" name="title"
+                        placeholder="Search for a movie or series"/>
+                        <input type="image" id="search_btn" name="btn" 
+                        src="images/mag_glass.svg"/>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    <!-- End of Navbar -->
+    </div>
+<!-- End of header -->
+<!-- Content -->
+<div id="content">
+    <div id="search-result-title">
+    <p class="attn">"Showing resutls(7) for 'wife':"</p>
+        <div id="search-result-table">
+            <table cellspacing="4" cellpadding="4">
+                <col width="250">
+                <col width="100">
+                <col width="100">
+                <thead>
+                    <th scope="col">Title</th>
+                    <th scope="col">Provider</th>
+                    <th scope="col">Type</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="result-item-title"><a href="#">The Astronaut's Wife</a></td>
+                        <td class="result-item-provider">Prime <br> HBO(273)</td>
+                        <td class="result-item-type">Movie</td>
+                    </tr>
+                    <tr>
+                        <td class="result-item-title"><a href="#">Call the Midwife</a></td>
+                        <td class="result-item-provider">Prime <br> BBC(85)</td>
+                        <td class="result-item-type">Series</td>
+                    </tr>
+                    <tr>
+                        <td class="result-item-title"><a href="#">The Time Traveler's Wife</a></td>
+                        <td class="result-item-provider">Prime <br> HBO(273)</td>
+                        <td class="result-item-type">Movie</td>
+                    </tr>
+                    <tr>
+                        <td class="result-item-title"><a href="#">The Astronaut's Wife</a></td>
+                        <td class="result-item-provider">Prime <br> HBO(273)</td>
+                        <td class="result-item-type">Movie</td>
+                    </tr>
+                    <tr>
+                        <td class="result-item-title"><a href="#">The Astronaut's Wife</a></td>
+                        <td class="result-item-provider">Prime <br> HBO(273)</td>
+                        <td class="result-item-type">Movie</td>
+                    </tr>
+                    </tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- End Content -->
+<!-- Footer -->
+    <div id="footer">
+        <p class="attn">&#169; 2015 Team Octopus Interactive Inc. All rights reserved.</p>
+    </div>
+<!-- End Wrapper -->
+</div>
+</body>
+</html>

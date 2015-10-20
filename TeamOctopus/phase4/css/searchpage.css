@@ -1,0 +1,23 @@
+/* Result table rules */
+#search-result-title {
+    float: left;
+    padding-left: 150px;
+    display: inline;
+}
+
+#search-result-table {
+    float: left;
+}
+
+.result-item-title {
+    line-height: 25px;
+    font-weight: 450;
+    font-size: 18px;
+}
+
+.result-item-provider, .result-item-type {
+    text-align: center;
+}
+table, th {
+    border: 1px solid;
+}

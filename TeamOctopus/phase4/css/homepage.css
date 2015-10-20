@@ -1,7 +1,7 @@
 /* Banner Rules */
 #title-banner {
     position: relative;
-    right: 25%;
+    right: 250px;
     top: 100px;
     display: inline-block;
     padding: 25px;
@@ -11,7 +11,7 @@
 
 #logo-img {
     position: relative;
-    left: 125px;
+    left: 100px;
     height: 160px;
     width: 110px;
 }
@@ -113,8 +113,8 @@ table a {
 #new-shows-box {
     float: left;
     position: relative;
-    right: 43%;
-    top: 875px;
+    right: 650px;
+    top: 900px;
     padding: 10px 10px 10px 10px;
     background-color: #dedede;
     border-radius: 10px;
@@ -133,8 +133,8 @@ table a {
 #trending-twitter-box {
     float: right;
     position: relative;
-    top: 540px;
-    right: 25%;
+    top: 620px;
+    right: 375px;
     padding: 10px 35px 10px 0px;
     background-color: #dedede;
     border-radius: 10px;
