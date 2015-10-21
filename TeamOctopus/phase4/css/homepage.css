@@ -1,19 +1,23 @@
 /* Banner Rules */
 #title-banner {
-    position: relative;
+   /* position: absolute;
     right: 250px;
     top: 100px;
     display: inline-block;
     padding: 25px;
     border-radius: 10px;
-    background-color: #dedede;
+    background-color: #dedede;*/
+    width:50%;
+    margin: 0 auto;
+     right: 15px;
 }
 
 #logo-img {
-    position: relative;
+    /*position: absolute;
     left: 100px;
     height: 160px;
-    width: 110px;
+    width: 110px;*/
+    margin: 0 auto;
 }
 /* End of Banner Rules */
 
@@ -22,11 +26,12 @@
     float: left;
     position: relative;
     left: 5%;
-    top: 475px;
+    /*top: 475px;*/
     padding: 15px;
     margin-bottom: 35px;
     background-color: #dedede;
     border-radius: 10px;
+    width: 71%;
 }
 
 .guide-item {
@@ -41,6 +46,7 @@ table {
     border-spacing: 0;
     font-size: 16px;
     color: #312722;
+    width: 100%;
 }
 
 thead {
@@ -83,9 +89,9 @@ table a {
 /* Trending Sidebar */
 #sidebar-container {
     float: right;
-    position: relative;
+    position: absolute;
     right: 10%;
-    top: 475px;
+	bottom: 100px;
     padding-right: 5px;
     background-color: #dedede;
     border-radius: 10px;
@@ -111,13 +117,11 @@ table a {
 
 /* New Shows Airing Box*/
 #new-shows-box {
-    float: left;
-    position: relative;
-    right: 650px;
-    top: 900px;
-    padding: 10px 10px 10px 10px;
+ position:absolute;
+  	bottom: 0px;
+  	left: 5%;
     background-color: #dedede;
-    border-radius: 10px;
+    padding: 15px;
 }
 
 #new-shows-box ul {
@@ -131,13 +135,11 @@ table a {
 
 /* What Twitter is Saying Box */
 #trending-twitter-box {
-    float: right;
-    position: relative;
-    top: 620px;
-    right: 375px;
-    padding: 10px 35px 10px 0px;
+  	position:absolute;
+  	bottom: 0px;
+  	right: 23%;
     background-color: #dedede;
-    border-radius: 10px;
+   
 }
 
 .trending-twitter-tweet {
