@@ -1,5 +1,5 @@
 :root {
-    background-color: #ffffff;
+    background-color: #0000ff;
 }
 a {
     text-decoration: none;
@@ -106,7 +106,7 @@ html, body {
 }
 
 #footer {
-    min-width: 90%;
+    min-width: 95%;
     float: left;
     margin: 35px;
     position: relative;

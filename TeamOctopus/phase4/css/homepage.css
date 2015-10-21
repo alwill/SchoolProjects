@@ -16,6 +16,8 @@
 #logo-img {
    position: relative;
    left: 25%;
+   background-color: #dedede;
+   margin-bottom: 10px;
 }
 
 #moto {
@@ -75,7 +77,7 @@ tbody tr:nth-child(even){
     background-color: #645B57;
 }
 
-td:first-child {
+#guide td:first-child {
     border-right: 1px solid;
 }
 
@@ -95,11 +97,11 @@ table a {
 
 /*Sports Table */
 #sports-guide {
-	  position:absolute;
-  	bottom: -.5%;
+	position:absolute;
+  	bottom: -3%;
   	left: 24%;
     background-color: #dedede;
-    padding: 15px;
+    padding: 15px 5px 15px 5px;
     border-radius:10px;
 	width: 25%;
 }
@@ -111,10 +113,8 @@ table a {
 	bottom: 0px;
     padding-right: 5px;
     background-color: #dedede;
-    border-radius: 10px;
-    
+    border-radius: 10px;    
 }
-
 
 .trending-item {
     float: right;
@@ -136,8 +136,8 @@ table a {
 
 /* New Shows Airing Box*/
 #new-shows-box {
- position:absolute;
-  	bottom: -15.9%;
+    position:absolute;
+  	bottom: -19.5%;
   	left: 5%;
     background-color: #dedede;
     padding: 15px;
@@ -156,7 +156,7 @@ table a {
 /* What Twitter is Saying Box */
 #trending-twitter-box {
   	position:absolute;
-  	bottom: -10.5%;
+  	bottom: -13.5%;
   	right: 23%;
     background-color: #dedede;
     border-radius:10px;
