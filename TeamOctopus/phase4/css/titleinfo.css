@@ -3,8 +3,8 @@
     background-color: #dedede;
     position: relative;
     top: 200px;
-    left: 60%;
-    width: 60%;
+    left: 35%;
+    width: 25%;
     padding: 15px;
     border-radius: 10px;
 }
@@ -16,6 +16,7 @@
 #title-overview p {
     text-align: left;
 }
+
 /* End of title overview */
 
 /* Episode Listings */
@@ -23,8 +24,8 @@
     position: relative;
     background-color: #dedede;
     top: 250px;
-    left: 100%;
-    width: 40%;
+    left: 55%;
+    width: 20%;
     border-radius: 10px;
     padding: 10px;
 }
@@ -39,9 +40,9 @@
     border-radius: 10px;
     background-color: #dedede;
     position: relative;
-    left: 40%;
+    left: 20%;
     top: -65px;
-    width: 39%;
+    width: 20%;
     padding: 15px;
 }
 
@@ -56,9 +57,9 @@
     background-color: #dedede;
     border-radius: 10px;
     position: relative;
-    left: 40%;
+    left: 20%;
     bottom: 40px;
-    width: 40%;
+    width: 20%;
     padding: 10px;
 }
 
@@ -77,9 +78,9 @@
     background-color: #dedede;
     border-radius: 10px;
     position: relative;
-    left: 100%;
+    left: 55%;
     bottom: 375px;
-    width: 40%;
+    width: 20%;
     padding: 10px;
 }
 
@@ -94,12 +95,11 @@
 
 }
 #content {
-    position: absolute;
 }
 
 #footer {
     position: absolute;
-    top: 160%;
+    top: 170%;
 }
 
 a {
