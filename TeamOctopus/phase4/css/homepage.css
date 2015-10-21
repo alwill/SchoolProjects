@@ -8,16 +8,23 @@
     border-radius: 10px;
     background-color: #dedede;*/
     width:50%;
+    right: 20%;
     margin: 0 auto;
-     right: 15px;
+
 }
 
 #logo-img {
-    /*position: absolute;
-    left: 100px;
-    height: 160px;
-    width: 110px;*/
-    margin: 0 auto;
+   position: relative;
+   left: 25%;
+}
+
+#moto {
+    position: relative;
+    left: 23%;
+	font-size: 20px;
+    font-weight: 450px;
+    line-height: 30px;
+    color: #312722;
 }
 /* End of Banner Rules */
 
@@ -86,6 +93,18 @@ table a {
 }
 /* End of Table Rules */
 
+/*Sports Table */
+#sports-guide {
+	 float: left;
+    position: relative;
+    left: 15%;
+    /*top: 475px;*/
+    padding: 15px;
+    margin-bottom: 35px;
+    background-color: #dedede;
+    border-radius: 10px;
+    width: 45%;
+}
 /* Trending Sidebar */
 #sidebar-container {
     float: right;
@@ -95,6 +114,7 @@ table a {
     padding-right: 5px;
     background-color: #dedede;
     border-radius: 10px;
+    
 }
 
 .trending-item {
@@ -118,10 +138,11 @@ table a {
 /* New Shows Airing Box*/
 #new-shows-box {
  position:absolute;
-  	bottom: 0px;
+  	bottom: 2%;
   	left: 5%;
     background-color: #dedede;
     padding: 15px;
+    border-radius:10px;
 }
 
 #new-shows-box ul {
@@ -136,10 +157,10 @@ table a {
 /* What Twitter is Saying Box */
 #trending-twitter-box {
   	position:absolute;
-  	bottom: 0px;
+  	bottom: 7%;
   	right: 23%;
     background-color: #dedede;
-   
+    border-radius:10px;
 }
 
 .trending-twitter-tweet {
@@ -163,7 +184,8 @@ table a {
 
 /* Overwrite Footer Bottom*/
 #footer {
-    top: 550px;
+    position:absolute;
+    top:100%;
 }
 /* End of Footer */
 
