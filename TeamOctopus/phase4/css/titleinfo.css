@@ -1,0 +1,111 @@
+/* Title overview */
+#title-overview {
+    background-color: #dedede;
+    position: relative;
+    top: 200px;
+    left: 60%;
+    width: 60%;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+#side-text {
+    font-size: 11px;
+}
+
+#title-overview p {
+    text-align: left;
+}
+/* End of title overview */
+
+/* Episode Listings */
+#episode-list-box {
+    position: relative;
+    background-color: #dedede;
+    top: 250px;
+    left: 100%;
+    width: 40%;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#episode-list {
+    list-style-type: none;
+}
+/* End of episode listings */
+
+/* Cast Listing */
+#cast-listing-box {
+    border-radius: 10px;
+    background-color: #dedede;
+    position: relative;
+    left: 40%;
+    top: -65px;
+    width: 39%;
+    padding: 15px;
+}
+
+#cast-list {
+    list-style-type: none;
+}
+
+/* End of Cast Listing */
+
+/* Upcoming Showings */
+#upcoming-showings-box {
+    background-color: #dedede;
+    border-radius: 10px;
+    position: relative;
+    left: 40%;
+    bottom: 40px;
+    width: 40%;
+    padding: 10px;
+}
+
+#showing-list {
+    list-style-type: none;
+}
+
+#showing-list span {
+    display: block;
+    font-size: 11px;
+}
+/* End of Upcoming Showsings */
+
+/* What Users Are Saying Box */
+#user-reviews-box {
+    background-color: #dedede;
+    border-radius: 10px;
+    position: relative;
+    left: 100%;
+    bottom: 375px;
+    width: 40%;
+    padding: 10px;
+}
+
+.content {
+    margin-left: 25px;
+}
+
+/* End of What Users Are Saying Box */
+
+/* overwrites */
+#header {
+
+}
+#content {
+    position: absolute;
+}
+
+#footer {
+    position: absolute;
+    top: 160%;
+}
+
+a {
+    color: #17211D;
+}
+
+a:visited {
+    color: #17211D;
+}

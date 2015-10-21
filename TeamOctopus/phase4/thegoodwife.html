@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TV Guru</title>
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/titleinfo.css" rel="stylesheet">
+</head>
+<body>
+<div id="wrapper">
+<!-- Navbar -->
+<div id="header">   
+    <nav id="navbar">
+        <ul id="nav-items">
+            <li id="nav-brand">
+                <a href="index.html">TV Guru</a>
+            </li>
+            <li>
+                <a href="account.html">My Account</a>
+            </li>
+            <li>
+                <a href="top_shows.html">Top Shows Airing</a>
+            </li>
+            <li>
+                <a href="showtimes.html">Theatre Showtimes</a>
+            </li>
+            <li>
+                <a href="sports.html">Sports</a>
+            </li>
+            <li>
+                <div id="nav-login">
+                    <a href="login.html">Login</a>
+                </div>
+            </li>
+            <li>
+                <form id="nav-search" action="html/search.html" method="post">
+                    <input type="text" id="search_field" name="title"
+                    placeholder="Search for a movie or series"/>
+                    <input type="image" id="search_btn" name="btn" 
+                    src="images/mag_glass.svg"/>
+                </form>
+            </li>
+        </ul>
+    </nav>
+</div>
+<!-- End of Navbar -->
+<!-- Content -->
+<div id="content">
+<!-- Title Overview -->
+    <div id="title-overview">
+        <p class="attn">The Good Wife <span id="side-text">(2009-present) Rating 8.3 <button type="button">Favorite</button></span></p>
+        <div class="title-description">
+            <p>Alicia has been a good wife to her husband, a former state's attorney.<br>
+            After a very humiliating sex and corruption scandal, he is behind bars.<br>
+            She must now provide for her family and returns to work as a litigator<br>
+            in a law firm.</p>
+        </div>
+    </div>
+<!-- End of title overview -->
+<!-- Episode Listings -->
+    <div id="episode-list-box">
+        <p class="attn">Episodes: </p>
+        <ul id="episode-list">
+            <li>
+                <p>Sunday May 3rd "Don't Fail" <br>
+                Season 6 episode 21</p>
+            </li>
+            <li>
+                <p>Sunday May 20th "Wanna Partner" <br>
+                Season 6 episode 22</p>
+            </li>
+            <li>
+                <p>Sunday October 3rd "Bond" <br>
+                Season 7 episode 1</p>
+            </li>
+            <li>
+                <p>Sunday October 11th "Innocents" <br>
+                Season 7 episode 2</p>
+            </li>
+        </ul>
+    </div>
+<!-- End of Episode Listings -->
+<!-- Cast Listing Box -->
+    <div id="cast-listing-box">
+        <p class="attn">Cast:</p>
+        <ul id="cast-list">
+            <li>
+                <p>Julianna Margulies</p>
+            </li>
+            <li>
+                <p>Matt Czuchry</p>
+            </li>
+            <li>
+                <p>Christine Baranski</p>
+            </li>
+            <li>
+                <p>Archie Panjabi</p>
+            </li>
+            <li>
+                <p>Alan Cumming</p>
+            </li>
+            <li>
+                <p>Josh Charles</p>
+            </li>
+            <li>
+                <p>Makenize Vega</p>
+            </li>
+            <li>
+                <p>Chris Noth</p>
+            </li>
+        </ul>
+    </div>
+<!-- End of Cast Listing Box -->
+<!-- Upcoming Showings Box -->
+    <div id="upcoming-showings-box">
+        <p class="attn">Upcoming Showings: </p>
+        <ul id="showing-list">
+            <li>
+                <p>Tonight at 8:00PM on CBS(3)<span>Rerun of Season 7 Episode 1</span></p>
+            </li>
+            <li>
+                <p>Tonight at 11:00PM on CBS(3)<span>Rerun of Season 7 Episode 1</span></p>
+            </li>
+            <li>
+                <p>Wednesday at 8:00PM on CBS(3)<span>Rerun of Season 7 Episode 1</span></p>
+            </li>
+            <li>
+                <p>Wednesday at 11:00PM on CBS(3)<span>Rerun of Season 7 Episode 1</span></p>
+            </li>
+            <li>
+                <p>October 11th at 8:00PM on CBS(3)<span>New Showing of Season 7 Episode 2</span></p>
+            </li>
+        </ul>
+    </div>
+
+<!-- End of Upcoming Showings Box -->
+
+<!-- What Users Are Saying Box -->
+    <div id="user-reviews-box">
+        <p class="attn">What Users Are Saying</p>
+        <div class="row">
+            <div class="comment">
+                <p class="user-name">LaughKnot:</p>
+                <section class="content">
+                    <p>Intoxicating series!</p>
+                </section>
+            </div>
+            <div class="comment">
+                <p class="user-name">WeddingPhotog:</p>
+                <section class="content">
+                    <p>Such a well written show! I'm not a fan of Julianna but her acting here is superb. Chris Noth plays his character so well.</p>
+                </section> 
+            </div>
+            <div class="comment">
+                <p class="user-name">Aletheia:</p>
+                <section class="content">
+                    <p>Excellent series, combing courtroom drama, crime stroies, and politices. A very relevant show to today's era.</p>
+                </section> 
+            </div>
+            <div class="comment">
+                <p class="user-name">Lisa:</p>
+                <section class="content">
+                    <p>The legal plots are all "Been there, seen that" and therefore are rather boring. It's a shame that interesting characters are not given much interesting material.</p>
+                </section> 
+            </div>
+            <div class="comment">
+                <p class="user-name">NaimRG:</p>
+                <section class="content">
+                    <p>Great show packed with great drama and story. People will gather every week to watch.</p>
+                </section> 
+            </div>
+            <div class="add-comment">
+                <form action="thegoodwife.html" method="post">
+                    <textarea name="comment" cols="30" rows="4"></textarea>
+                    <input type="submit" value="Post Comment">
+                </form>
+            </div>
+        </div>
+    </div>
+<!-- End of What Users Are Saying Box -->
+</div>
+<!-- End Content -->
+<!-- Footer -->
+    <div id="footer">
+        <p class="attn">&#169; 2015 Team Octopus Interactive Inc. All rights reserved.</p>
+    </div>
+<!-- End Wrapper -->
+</div>
+</body>
+</html>
