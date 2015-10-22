@@ -19,29 +19,29 @@
 
 /* End of title overview */
 
-/* Episode Listings */
-#episode-list-box {
-    position: relative;
+/* top right box */
+#top-right-box {
+    position: absolute;
     background-color: #dedede;
-    top: 250px;
+    top: 60%;
     left: 55%;
     width: 20%;
     border-radius: 10px;
     padding: 10px;
 }
 
-#episode-list {
+#top-right-list {
     list-style-type: none;
 }
-/* End of episode listings */
+/* End of top right box */
 
 /* Cast Listing */
-#cast-listing-box {
+#top-left-box {
     border-radius: 10px;
     background-color: #dedede;
-    position: relative;
+    position: absolute;
     left: 20%;
-    top: -65px;
+    top: 60%;
     width: 20%;
     padding: 15px;
 }
@@ -53,12 +53,12 @@
 /* End of Cast Listing */
 
 /* Upcoming Showings */
-#upcoming-showings-box {
+#bottom-left-box {
     background-color: #dedede;
     border-radius: 10px;
-    position: relative;
+    position: absolute;
     left: 20%;
-    bottom: 40px;
+    top: 105%;
     width: 20%;
     padding: 10px;
 }
@@ -74,12 +74,12 @@
 /* End of Upcoming Showsings */
 
 /* What Users Are Saying Box */
-#user-reviews-box {
+#bottom-right-box {
     background-color: #dedede;
     border-radius: 10px;
-    position: relative;
+    position: absolute;
     left: 55%;
-    bottom: 375px;
+    top: 97%;
     width: 20%;
     padding: 10px;
 }
