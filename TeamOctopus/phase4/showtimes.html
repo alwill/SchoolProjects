@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TV Guru</title>
+    <link href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/showtimes.css">
+</head>
+<body>
+<div id="wrapper">
+<!-- Navbar -->        
+    <nav id="navbar">
+        <ul id="nav-items">
+            <li id="nav-brand">
+                <a href="index.html">TV Guru</a>
+            </li>
+            <li>
+                <a href="account.html">My Account</a>
+            </li>
+            <li>
+                <a href="top_shows.html">Top Shows Airing</a>
+            </li>
+            <li>
+                <a href="showtimes.html">Theatre Showtimes</a>
+            </li>
+            <li>
+                <a href="sports.html">Sports</a>
+            </li>
+            <li>
+                <div id="nav-login">
+                    <a href="login.html">Login</a>
+                </div>
+            </li>
+            <li>
+                <form id="nav-search" action="search.html" method="post">
+                    <input type="text" id="search_field" name="title"
+                    placeholder="Search for a movie or series"/>
+                    <input type="image" id="search_btn" name="btn" 
+                    src="images/mag_glass.svg"/>
+                </form>
+            </li>
+        </ul>
+    </nav>
+<!-- End of Navbar -->
+<!-- Content -->
+<div id="content">
+    <div id="select-theater">
+        <form id="select-theater-form" action="#">
+            <label>Theaters Near You: <select name="theaters">
+                <option>AMC Showplace 12</option>
+                <option>AMC Showplace 6</option>
+                <option>AMC Showplace 16</option>
+            </select></label>
+        </form>
+    </div>
+    <div id="showtimes">
+        <p class="attn">Theater Showtimes</p>
+        <table align="center">
+            <thead>
+                <th scope="col">AMC Showplace 12 </th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="showtime-item">The Martian</td>
+                    <td>12:00PM</td>
+                    <td>2:00PM</td>
+                    <td>4:00PM</td>
+                    <td>7:30PM</td>
+                    <td>10:15PM</td>
+                </tr>
+                <tr>
+                    <td class="showtime-item">The Walk</td>
+                    <td>1:30PM</td>
+                    <td>4:30PM</td>
+                    <td>7:00PM</td>
+                    <td>11:15PM</td>
+                </tr>
+                <tr>
+                    <td class="showtime-item">The Intern</td>
+                    <td>11:30AM</td>
+                    <td>2:15PM</td>
+                    <td>5:15PM</td>
+                    <td>9:30PM</td>
+                    <td>10:45PM</td>
+                </tr>
+                <tr>
+                    <td class="showtime-item">Green Inferno</td>
+                    <td>12:00PM</td>
+                    <td>2:30PM</td>
+                    <td>5:30PM</td>
+                    <td>6:15PM</td>
+                </tr>
+                <tr>
+                    <td class="showtime-item">Everest</td>
+                    <td>11:15AM</td>
+                    <td>3:30PM</td>
+                    <td>6:15PM</td>
+                    <td>10:45PM</td>
+                </tr>
+                <tr>
+                    <td class="showtime-item">Black Mass</td>
+                    <td>12:30PM</td>
+                    <td>2:15PM</td>
+                    <td>5:15PM</td>
+                    <td>9:30PM</td>
+                </tr>
+            </tbody>
+        </table>
+        <p> Click <a href="#">here</a> to get to your local theater's website to purchase tickets.</p>
+    </div>
+    <div id="upcoming-movies">
+        <p class="attn">Upcoming Movies</p>
+        <ul>
+            <li class="movie">
+                <strong class="over-text">Superman vs Batman</strong>
+                <br>
+                <span class="under-text">&nbsp;&nbsp;Summer of 2016</span>
+            </li>
+            <li class="movie">
+                <strong class="over-text">Fast and Furious 8</strong>
+                <br>
+                <span class="under-text">&nbsp;&nbsp;Summer of 2017</span>
+            </li>                    
+            <li class="movie">
+                <strong class="over-text">Goosebumps</strong>
+                <br>
+                <span class="under-text">&nbsp;&nbsp;November of 2015</span>
+            </li>                    
+            <li class="movie">
+                <strong class="over-text">Spectre</strong>
+                <br>
+                <span class="under-text">&nbsp;&nbsp;Specture</span>
+            </li>
+        </ul>
+    </div>
+    <div id="bottom-box">
+        <p class="attn">What Critics Are Saying</p>
+        <div class="row">
+            <div class="comment">
+                <p class="user-name">@moviecritic:</p>
+                <section class="content">
+                    <p>You have to see Martian two thumbs up</p>
+                </section>
+            </div>
+            <div class="comment">
+                <p class="user-name">@harsh-critic:</p>
+                <section class="content">
+                    <p>Don't see Green Inferno #Blah!</p>
+                </section> 
+            </div>
+            <div class="comment">
+                <p class="user-name">@MrWhite:</p>
+                <section class="content">
+                    <p>I loved the walk!</p>
+                </section> 
+            </div>
+            <div class="comment">
+                <p class="user-name">@theman:</p>
+                <section class="content">
+                    <p>Everest seemed to take forever</p>
+                </section> 
+            </div>
+        </div>
+</div>
+<!-- End Content -->
+<!-- Footer -->
+    <div id="footer">
+        <p class="attn">&#169; 2015 Team Octopus Interactive Inc. All rights reserved.</p>
+    </div>
+<!-- End Wrapper -->
+</div>
+</body>
+</html>

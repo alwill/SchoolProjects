@@ -1,0 +1,104 @@
+#footer {
+    position: absolute;
+    bottom: -40%;
+}
+
+#select-sport {
+    background-color: #dedede;
+    padding: 10px;
+    position: absolute;
+    top: 175px;
+    right: 22%;
+    border-radius: 10px;
+}
+
+#sports-guide {
+    position:absolute;
+    top: 35%;
+    left: 53%;
+    background-color: #dedede;
+    padding: 15px 5px 15px 5px;
+    border-radius:10px;
+    width: 25%;
+}
+
+thead {
+    background-color: #4E4845;
+    color: #312722;
+}
+th {
+    padding: 10px;
+    padding-right: 10px;
+    vertical-align: middle;
+    border-right: 1px solid;
+}
+
+th:last-child {
+    border-right: 0px;
+}
+
+tbody tr:nth-child(even){
+    background-color: #645B57;
+}
+
+td:last-child {
+    border-right: 0px;
+}
+
+table a {
+    text-decoration: none;
+    color: #312722;
+}
+
+ table a:visited {
+    color: #312722;
+}
+
+#bottom-box {
+    position: absolute;
+    background-color: #dedede;
+    top: 80%;
+    right: 25%;
+    width: 20%;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.comment section {
+    margin-left: 15px;
+}
+
+#upcoming-fav-teams {
+    background-color: #dedede;
+    border-radius: 10px;
+    position: absolute;
+    right: 55%;
+    top: 80%;
+    padding: 10px;
+}
+
+#upcoming-fav-teams td {
+    border-right: 1px solid; 
+}
+
+#upcoming-fav-teams td:nth-child(even) {
+    border-right: 3px solid;
+}
+
+#upcoming-fav-teams td:last-child {
+    border-right: 0px;
+}
+
+#top-left-box {
+    position: absolute;
+    background-color: #dedede;
+    top: 35%;
+    left: 23%;
+    width: 20%;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#top-left-list {
+    list-style-type: none;
+}

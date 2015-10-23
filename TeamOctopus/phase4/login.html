@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TV Guru</title>
+    <link href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+</head>
+<body>
+<div id="wrapper">
+<!-- Navbar -->
+<div id="header">    
+    <nav id="navbar">
+        <ul id="nav-items">
+            <li id="nav-brand">
+                <a href="index.html">TV Guru</a>
+            </li>
+            <li>
+                <a href="account.html">My Account</a>
+            </li>
+            <li>
+                <a href="top_shows.html">Top Shows Airing</a>
+            </li>
+            <li>
+                <a href="showtimes.html">Theatre Showtimes</a>
+            </li>
+            <li>
+                <a href="sports.html">Sports</a>
+            </li>
+            <li>
+                <div id="nav-login">
+                    <a href="login.html">Login</a>
+                </div>
+            </li>
+            <li>
+                <form id="nav-search" action="search.html" method="post">
+                    <input type="text" id="search_field" name="title"
+                    placeholder="Search for a movie or series"/>
+                    <input type="image" id="search_btn" name="btn" 
+                    src="images/mag_glass.svg"/>
+                </form>
+            </li>
+        </ul>
+    </nav>
+</div>
+<!-- End of Navbar -->
+<!-- Content -->
+<div id="content">
+    <div id="login-box">
+        <p class="attn">Login</p>
+        <form id="login-form" action="index.html">
+            <label>Username: <input type="text" name="username" id="username-field" placeholder="Username..."></label>
+            <br>
+            <label>Password: <input type="password" name="password" id="password-field" placeholder="Password..."></label>
+            <br>
+            <input type="submit" name="login-btn" value="Login">
+        </form>
+    </div>
+    <div id="register-box">
+        <p class="attn">Register</p>
+        <form id="register-form" action="#">
+            <label>Email: <input type="text" name="email" id="email-field" placeholder="E-mail..."></label>
+            <br>
+            <label>Username: <input type="text" name="username" id="username-field" placeholder="Username..."></label>
+            <br>
+            <label>Password: <input type="password" name="password" id="password-field" placeholder="Password..."></label>
+            <br>
+            <label>Repeat Password: <input type="password" name="repeat-password" id="password-field" placeholder="Password..."></label>
+            <br>
+            <input type="submit" name="register-btn" value="Register">
+        </form>
+    </div>
+    <div id="forgot-login-box">
+        <p class="attn">Forgot Your Password?<br>Enter Your E-mail below.</p>
+        <form id="forgot-login-form" action="#">
+            <label>Email: <input type="text" name="email" id="email-field" placeholder="E-mail..."></label>
+            <br>
+            <input type="submit" name="forgotr-btn" value="Send E-mail">
+        </form>
+    </div>
+</div>
+<!-- End Content -->
+<!-- Footer -->
+    <div id="footer">
+        <p class="attn">&#169; 2015 Team Octopus Interactive Inc. All rights reserved.</p>
+    </div>
+<!-- End Wrapper -->
+</div>
+</body>
+</html>

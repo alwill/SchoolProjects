@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TV Guru</title>
+    <link href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/sports.css">
+</head>
+<body>
+<div id="wrapper">
+<!-- Navbar -->        
+    <nav id="navbar">
+        <ul id="nav-items">
+            <li id="nav-brand">
+                <a href="index.html">TV Guru</a>
+            </li>
+            <li>
+                <a href="account.html">My Account</a>
+            </li>
+            <li>
+                <a href="top_shows.html">Top Shows Airing</a>
+            </li>
+            <li>
+                <a href="showtimes.html">Theatre Showtimes</a>
+            </li>
+            <li>
+                <a href="sports.html">Sports</a>
+            </li>
+            <li>
+                <div id="nav-login">
+                    <a href="login.html">Login</a>
+                </div>
+            </li>
+            <li>
+                <form id="nav-search" action="search.html" method="post">
+                    <input type="text" id="search_field" name="title"
+                    placeholder="Search for a movie or series"/>
+                    <input type="image" id="search_btn" name="btn" 
+                    src="images/mag_glass.svg"/>
+                </form>
+            </li>
+        </ul>
+    </nav>
+<!-- End of Navbar -->
+<!-- Content -->
+<div id="content">
+    <div id="select-sport">
+        <form id="select-sport-form" action="sports.html" method="post">
+            <label>Select A Sport: <select name="Sports">
+                <option>NFL</option>
+                <option>MLB</option>
+                <option>NBA</option>
+                <option>NHL</option>
+            </select></label>
+            <input type="submit" value="Go">
+        </form>
+    </div>
+    <div id="sports-guide">
+            <p class="attn">MLB</p>
+            <table align="center">
+                <thead>
+                    <th scope="col">Team</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">Team</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">Inning</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="sports-team">Cubs</td>
+                        <td class="sports-score">0</td>
+                        <td class="sports-team">Cardinals</td>
+                        <td class="sports-score">4</td>
+                        <td class="sports-time">Bottom 4</td>
+                    </tr>
+                    <tr>
+                        <td class="sports-team">Mets</td>
+                        <td class="sports-score">0</td>
+                        <td class="sports-team">Dodgers</td>
+                        <td class="sports-score">0</td>
+                        <td class="sports-time">Top 1</td>
+                    </tr>
+                </tbody>            
+            </table>
+        </div>
+        <div id="bottom-box">
+        <p class="attn">Sports Talk </p>
+        <div class="row">
+            <div class="comment">
+                <p class="user-name">@CardinalFan:</p>
+                <section class="content">
+                    <p>Cardinals > Cubs. Lackey 7.1 ip 2 h 0 runs</p>
+                </section>
+            </div>
+            <div class="comment">
+                <p class="user-name">@RamsFan01:</p>
+                <section class="content">
+                    <p>I can’t believe the Rams beat the Cardinals! #Defense</p>
+                </section> 
+            </div>
+            <div class="comment">
+                <p class="user-name">@BusterPosey:</p>
+                <section class="content">
+                    <p>I wish I was in the post season</p>
+                </section> 
+            </div>
+            <div class="comment">
+                <p class="user-name">@PatriotsH8er:</p>
+                <section class="content">
+                    <p>Brady probably deflated that ball</p>
+                </section> 
+            </div>
+        </div>
+        </div>
+        <div id="upcoming-fav-teams">
+            <table>
+                <thead>
+                    <th colspan="4">Upcoming Favorited Team Games</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Cardinals</strong></td>
+                        <td><strong>Date</strong></td>
+                        <td><strong>Rams</strong></td>
+                        <td><strong>Date</strong></td>
+                    </tr>
+                    <tr>
+                        <td>at Cubs</td>
+                        <td>10/12/2015 5:05PM</td>
+                        <td>Bye</td>
+                        <td>10/18/2015</td>
+                    </tr>
+                    <tr>
+                        <td>Cubs</td>
+                        <td>10/14/2015 4:35PM</td>
+                        <td>Browns</td>
+                        <td>10/25/2015 12:00PM</td>
+                    </tr>
+                    <tr>
+                        <td>TBD</td>
+                        <td>10/20/2015 TDB</td>
+                        <td>49ers</td>
+                        <td>11/01/2015 12:00PM</td>
+                    </tr>
+                    <tr>
+                        <td>TBD</td>
+                        <td>10/21/2015 TBD</td>
+                        <td>49ers</td>
+                        <td>11/08/2015 12:00PM</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="top-left-box">
+            <p class="attn">Upcoming Sport Shows</p>
+            <ul id="top-left-list">
+                <li>
+                    <p>Sportcenter Starts in 10 Minutes on ESPN</p>
+                </li>
+                <li>
+                    <p>See What Curl Schilling Thought About the Cards and Cubs on FS1(276) at 9:00PM EST</p>
+                </li>
+                <li>
+                    <p>Rams Post Game Show Starts After the Game on Fox(2)</p>
+                </li>
+                <li>
+                    <p>See All Baseball Hightlights on the MLB Network</p>
+                </li>
+            </ul>
+        </div>
+</div>
+<!-- End Content -->
+<!-- Footer -->
+    <div id="footer">
+        <p class="attn">&#169; 2015 Team Octopus Interactive Inc. All rights reserved.</p>
+    </div>
+<!-- End Wrapper -->
+</div>
+</body>
+</html>
