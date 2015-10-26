@@ -1,0 +1,104 @@
+#footer {
+    position: absolute;
+    bottom: 0;
+}
+
+#guide {
+    float: left;
+    position: absolute;
+    left: 25%;
+    top: 25%;
+    padding: 10px;
+    background-color: #dedede;
+    border-radius: 10px;
+}
+
+.guide-item {
+    text-align: center;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+}
+
+#guide table {
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 16px;
+    color: #312722;
+    width: 100%;
+}
+
+thead {
+    background-color: #4E4845;
+    color: #312722;
+}
+th {
+    padding: 10px;
+    padding-right: 10px;
+    vertical-align: middle;
+    border-right: 1px solid;
+}
+
+th:last-child {
+    border-right: 0px;
+}
+
+tbody tr:nth-child(even){
+    background-color: #645B57;
+}
+
+#guide td:first-child {
+    border-right: 1px solid;
+}
+
+td:last-child {
+    border-right: 0px;
+}
+
+table a {
+    text-decoration: none;
+    color: #312722;
+}
+
+ table a:visited {
+    color: #312722;
+}
+
+.over-text {
+    display: block;
+}
+
+.under-text {
+    font-size: 14px;
+    line-height: 8px;
+}
+
+#new-shows-box {
+    position:absolute;
+    top: 25%;
+    left: 5%;
+    background-color: #dedede;
+    padding: 15px;
+    border-radius:10px;
+}
+
+#new-shows-box ul {
+    list-style: none;
+}
+
+.new-show {
+    color: #312722;
+}
+
+#bottom-box {
+    position: absolute;
+    background-color: #dedede;
+    top: 25%;
+    right: 10%;
+    width: 20%;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.comment section {
+    margin-left: 15px;
+}

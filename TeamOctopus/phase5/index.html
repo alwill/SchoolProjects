@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+<div id="wrapper">
+    <div id="header">
+        <nav>
+            <div id="navbar-wrapper">
+                <ul id="navbar-items">
+                    <li class="navbar-item"><a href="index.html" id="active">Home</a></li>
+                    <li class="navbar-item"><a href="#">My Account</a></li>
+                    <li class="navbar-item"><a href="#">Top Shows</a>
+                    <li class="navbar-item"><a href="#">Theater Showtimes</a>
+                    <li class="navbar-item"><a href="#">Sports</a></li>
+                    <li class="navbar-item"><a href="#">Login</a>
+                    <li class="navbar-item">
+                        <form action="search.html" method="post">
+                            <input type="search" name="title" placeholder="Search a series or movie..." id="search-field">
+                            <input type="image" id="search-btn" name="btn" src="images/mag_glass.svg"/>
+                        </form>
+                    </li>
+                </ul>
+            </div>                
+        </nav>
+    </div>
+    <div id="content">
+        <div class="section group">
+            <div class="col span_12_of_12">
+                <p class="fancy-attn">The Best Place For Your TV Needs!</p>
+            </div>
+        </div>
+        <div class="section group">
+            <div class="col span_8_of_12">
+                <div id="guide">
+                    <table align="center">
+                        <thead>
+                        <th scope="col"><a href="#">&#9664;</a></th>
+                        <th scope="col">7:00PM</th>
+                        <th scope="col">7:30PM</th>
+                        <th scope="col">8:00PM</th>
+                        <th scope="col">8:30PM</th>
+                        <th scope="col">9:00PM</th>
+                        <th scope="col">9:30PM</th>
+                        <th scope="col">10:00PM</th>
+                        <th scope="col"><a href="#">&#9654;</a></th>
+                    </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong class="over-text">CBS</strong>
+                                    <span class="under-text">Channel 2</span>
+                                </td>
+                                <td class="guide-item" colspan="2">Madam Secretary</td>
+                                <td class="guide-item" colspan="2"><a href="thegoodwife.html">The Good Wife</a></td>
+                                <td class="guide-item" colspan="2">CSI: Cyber</td>
+                                <td class="guide-item" colspan="2">Forty Eight Hours</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong class="over-text">ABC</strong>
+                                    <span class="under-text">Channel 30</span>
+                                </td>
+                                <td class="guide-item" colspan="2">Once Upon A Time</td>
+                                <td class="guide-item" colspan="2">Blood and Oil</td>
+                                <td class="guide-item" colspan="2">Quantico</td>
+                                <td class="guide-item" colspan="2">Forty Eight Hours</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong class="over-text">NBC</strong>
+                                    <span class="under-text">Channel 5</span>
+                                </td>
+                                <td class="guide-item" colspan="5">Football: Saints at Cowboys</td>
+                                <td class="guide-item" colspan="3">Local Programming</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong class="over-text">FOX</strong>
+                                    <span class="under-text">Channel 4</span>
+                                </td>
+                                <td class="guide-item" colspan="2">Brookly Nine-Nine</td>
+                                <td class="guide-item" colspan="2">Family Guy</td>
+                                <td class="guide-item" colspan="2">The Last Man on Earth</td>
+                                <td class="guide-item" colspan="2">Local Programming</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong class="over-text">PBS</strong>
+                                    <span class="under-text">Channel 11</span>
+                                </td>
+                                <td class="guide-item" colspan="2">Indian Summers On Masterpiece</td>
+                                <td class="guide-item" colspan="1">The Widower</td>
+                                <td class="guide-item" colspan="2">Ask This Old House</td>
+                                <td class="guide-item" colspan="3">Hometime</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col span_3_of_12">
+                <div id="new-shows-box">
+                    <p><strong>New Shows Airing Today</strong></p>
+                    <ul>
+                        <li class="new-show">
+                            <strong class="over-text">The Affair</strong>
+                            <span class="under-text">9:00PM<br>Showtime channel 270</span>
+                        </li>
+                        <li class="new-show">
+                            <strong class="over-text">The Good Wife</strong>
+                            <span class="under-text">8:00PM<br>CBS channel 2</span>
+                        </li>                    
+                        <li class="new-show">
+                            <strong class="over-text">Girl Meets World</strong>
+                            <span class="under-text">7:30PM<br>Disney channel 120</span>
+                        </li>                    
+                        <li class="new-show">
+                            <strong class="over-text">Doctor Who</strong>
+                            <span class="under-text">8:00PM<br>BBC channel 85</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="section group">
+            <div class="col span_6_of_12">
+                <div id="trending-sidebar">
+                    <p class="attn">Trending Movies and Series</p>
+                    <div class="trending-item">  
+                        <a href="#"><img class="trending-img" src="images/goosebumps.jpg" alt="Goosebumps"/><br>Goosebumps</a>                                
+                    </div>
+                    <div class="trending-item">
+                        <a href="martian.html"><img class="trending-img" src="images/martian.jpg" alt="Martian"/><br>Martian</a>
+                    </div>
+                    <div class="trending-item">
+                        <a href="#"><img class="trending-img" src="images/quantico.jpg" alt="Quantico"/><br>Quantico</a>                   
+                    </div>
+                    <div class="trending-item">
+                        <a href="thegoodwife.html"><img class="trending-img" src="images/thegoodwife.jpg" alt="The Good Wife"/><br>The Good Wife</a>                    
+                    </div>
+                    <div class="trending-item">
+                        <a href="#"><img class="trending-img" src="images/theflash.jpg" alt="The Flash"/><br>The Flash</a>
+                    </div>
+                </div>
+            </div>
+            <div id="col span_1_of_12">
+                <div id="trending-twitter-box">
+                    <p class="attn">What Twitter is Saying</p>
+                    <ul>
+                        <li class="trending-twitter-tweet">
+                            <p><strong>@ilovetv:</strong>OMG! Did you see what just happened on #HowToGetAwayWithMurder</p>
+                        </li>
+                        <li class="trending-twitter-tweet">
+                            <p><strong>@RamsFan01:</strong>I can't believe the Rams beat the Cardinals! #Defense</p>
+                        </li>
+                        <li class="trending-twitter-tweet">
+                            <p><strong>@TheWalkingDead:</strong>Catch The premier of the season 10/11 at 9pm</p>
+                        </li>
+                        <li class="trending-twitter-tweet">
+                            <p><strong>@TVWatcher:</strong>Mr.Robot was amazing! Who is at the door? #MrRobot</p>
+                        </li>
+                    </ul>
+                </div>           
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <p class="fancy-attn">&#169; 2015 Team Octopus Interactive Inc. All rights reserved.</p>
+    </div>
+</div>
+</body>
+</html>

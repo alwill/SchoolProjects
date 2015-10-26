@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TV Guru</title>
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/searchpage.css" rel="stylesheet">
+</head>
+<body>
+<div id="wrapper">
+<!-- Header -->
+    <div id="header">
+    <!-- Navbar -->        
+        <nav id="navbar">
+            <ul id="nav-items">
+                <li id="nav-brand">
+                    <a href="index.html">TV Guru</a>
+                </li>
+                <li>
+                    <a href="account.html">My Account</a>
+                </li>
+                <li>
+                    <a href="top_shows.html">Top Shows Airing</a>
+                </li>
+                <li>
+                    <a href="showtimes.html">Theatre Showtimes</a>
+                </li>
+                <li>
+                    <a href="sports.html">Sports</a>
+                </li>
+                <li>
+                    <div id="nav-login">
+                        <a href="login.html">Login</a>
+                    </div>
+                </li>
+                <li>
+                    <form id="nav-search" action="search.html" method="post">
+                        <input type="text" id="search_field" name="title"
+                        placeholder="Search for a movie or series"/>
+                        <input type="image" id="search_btn" name="btn" 
+                        src="images/mag_glass.svg"/>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    <!-- End of Navbar -->
+    </div>
+<!-- End of header -->
+<!-- Content -->
+<div id="content">
+    <div id="search-result-box">
+        <div id="search-result-title">
+        <p class="attn">Showing resutls(3) for 'wife':</p>
+            <div id="search-result-table">
+                <table cellspacing="4" cellpadding="4">
+                    <col width="250">
+                    <col width="100">
+                    <col width="100">
+                    <thead>
+                        <th scope="col">Title</th>
+                        <th scope="col">Provider</th>
+                        <th scope="col">Type</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="result-item-title"><a href="#">My Wife and Kids</a></td>
+                            <td class="result-item-provider">Netflix <br> CBS(2)</td>
+                            <td class="result-item-type">Series</td>
+                        </tr>
+                        <tr>
+                            <td class="result-item-title"><a href="thegoodwife.html">The Good Wife</a></td>
+                            <td class="result-item-provider">CBS(2)</td>
+                            <td class="result-item-type">Series</td>
+                        </tr>
+                        <tr>
+                            <td class="result-item-title"><a href="#">Trophy Wife</a></td>
+                            <td class="result-item-provider">Lifetime(130)</td>
+                            <td class="result-item-type">Series</td>
+                        </tr>
+                        </tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- Refine Search Results -->
+    <div id="refine-results-box">
+        <p class="attn">Refine The Results</p>
+        <form id="refine-form" action="search_refined.html" method="post">
+            <input type="search" id="refine-search-field" name="title" value="wife" />
+            <p>Modify Your Search:</p>
+            <label>
+                <input type="radio" class="refine-radio" name="tvseries"/> TV Series
+            </label>
+            <br>
+            <label>
+                <input type="radio" class="refine-radio" name="movie"/> Movie
+            </label>
+            <p>Streaming Services:</p>
+            <label>
+                <input type="checkbox" class="refine-check" name="netflix"/> Netflix
+            </label>
+            <br>
+            <label>
+                <input type="Checkbox" class="refine-check" name="prime"/> Prime
+            </label>
+            <br>
+            <br>
+            <input type="submit" class="refine-submit" value="Search"/>
+        </form>
+    </div>
+
+    <!-- End of Refine Search Results -->
+</div>
+<!-- End Content -->
+<!-- Footer -->
+    <div id="footer">
+        <p class="attn">&#169; 2015 Team Octopus Interactive Inc. All rights reserved.</p>
+    </div>
+</div>
+<!-- End Wrapper -->
+</body>
+</html>

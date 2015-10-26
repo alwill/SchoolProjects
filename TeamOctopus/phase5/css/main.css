@@ -1,0 +1,278 @@
+/***************** Page Layout AND GLOBALS*******************/
+body {
+   font-family: arial, helvetica, sans-serif;
+   font-size: 14px;
+   background-color: #ccc;
+   color: #fff;
+}
+
+a {
+   color: #fff;
+}
+
+a:hover {
+   color: #005f5f;
+}
+
+#wrapper {
+   width: 90%;
+   margin: 0px auto;
+   padding: 10px;   
+}
+
+#header {
+   height: 50px;
+}
+
+#content {
+   padding: 10px;
+   overflow: auto;
+}
+
+#footer {
+   clear: both;
+}
+/***************** END Page Layout *******************/
+
+/***************** USEFUL RULES *******************/
+/* use with span */
+.under-text {
+   display: block;
+   font-size: 11px;
+}
+
+.attn{
+   text-align: center;
+   font-weight: 750px;
+   font-size: 18px;
+}
+
+.fancy-attn {
+   text-align: center;
+   font-weight: 800px;
+   font-size: 22px;
+   font-style: italic;
+   color: #444;
+}
+/***************** END USEFUL RULES *******************/
+
+/***************** GRID RULES *******************/
+.section {
+   clear: both;
+   padding: 0px;
+   margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+.col {
+   display: block;
+   float:left;
+   margin: 1% 0 1% 1.6%;
+}
+.col:first-child { margin-left: 0; }
+
+/*  GROUPING  */
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both;}
+.group { zoom:1; /* For IE 6/7 */ }
+/*  GRID OF TWELVE  */
+.span_12_of_12 {
+   width: 100%;
+}
+
+.span_11_of_12 {
+   width: 91.53%;
+}
+.span_10_of_12 {
+   width: 83.06%;
+}
+
+.span_9_of_12 {
+   width: 74.6%;
+}
+
+.span_8_of_12 {
+   width: 66.13%;
+}
+
+.span_7_of_12 {
+   width: 57.66%;
+}
+
+.span_6_of_12 {
+   width: 49.2%;
+}
+
+.span_5_of_12 {
+   width: 40.73%;
+}
+
+.span_4_of_12 {
+   width: 32.26%;
+}
+
+.span_3_of_12 {
+   width: 23.8%;
+}
+
+.span_2_of_12 {
+   width: 15.33%;
+}
+
+.span_1_of_12 {
+   width: 6.866%;
+}
+
+/*  GO FULL WIDTH BELOW 480 PIXELS */
+@media only screen and (max-width: 480px) {
+   .col {  margin: 1% 0 1% 0%; }
+    
+    .span_1_of_12, .span_2_of_12, .span_3_of_12, .span_4_of_12, .span_5_of_12, .span_6_of_12, .span_7_of_12, .span_8_of_12, .span_9_of_12, .span_10_of_12, .span_11_of_12, .span_12_of_12 {
+   width: 100%; 
+   }
+}
+/***************** END GRID RULES *******************/
+
+/***************** Navbar *******************/
+#navbar-wrapper {
+   font-family: 'Oswald', sans-serif;
+   border-radius: 10px;
+}
+
+#navbar-items {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+   background-color: #444;
+   text-align: center;
+   border-radius: 10px;
+}
+
+.navbar-item {
+   font-size: 1.2em;
+   line-height: 40px;
+   height: 40px;
+   display: inline-block;
+   padding-right: 5px;
+}
+
+.navbar-item a {
+   text-decoration: none;
+   display: block;
+   transition: .3s background-color;
+}
+
+.navbar-item a:hover {
+   background-color: #005f5f;
+   color: #fff;
+}
+
+.navbar-item a#active {
+   background-color: #fff;
+   color: #444;
+   cursor: default;
+}
+
+#search-field {
+   width: 200px;
+   border: 0;
+}
+
+#search-btn {
+   height: 15px;
+   position: relative;
+   right: 25px;
+   top: 2px;
+}
+/***************** END Navbar *******************/
+
+/*****************  HOMEPAGE TV GUIDE *******************/
+#guide {
+   background-color: #444;
+   border-radius: 10px;
+   padding: 10px;
+   width: 100%;
+}
+
+#guide table, #guide a {
+   border-spacing: 1.5px;
+   text-decoration: none;
+}
+
+#guide tbody tr:nth-child(even) {
+   background-color: #808080;
+}
+
+#guide th {
+   padding: 10px;
+   border-right: 1px solid #fff;
+   border-bottom: 1px solid #fff;
+}
+
+#guide th:last-child {
+   border-right: 0px;
+}
+
+#guide td:first-child {
+   border-right: 1px solid #fff;
+}
+
+.guide-item {
+   text-align: center;
+   border-right: 1px solid #fff;
+}
+/***************** END HOMEPAGE TV GUIDE *******************/
+
+
+/***************** TRENDING SIDEBAR *******************/
+#trending-sidebar {
+   background-color: #444;
+   border-radius: 10px;
+   padding: 10px;
+   float: left;
+}
+
+.trending-item, .trending-item a {
+   display: inline-block;
+   text-decoration: none;
+   padding: 3px;
+}
+
+.trending-img {
+   height: 140px;
+   width: 90px;
+}
+/***************** END TRENDING SIDEBAR *******************/
+
+/***************** NEW SHOWS BOX *******************/
+#new-shows-box {
+   background-color: #444;
+   border-radius: 10px;
+   padding: 10px;
+   float: right;
+}
+
+.new-show {
+   list-style: none;
+}
+
+.new-show .under-text {
+   margin-left: 15px;
+}
+/***************** END NEW SHOWS BOX *******************/
+
+/***************** TWITTER TWEETS *******************/
+#trending-twitter-box {
+   background-color: #444;
+   padding: 10px;
+   border-radius:10px;
+   display: inline-block;
+   float: right;
+}
+
+.trending-twitter-tweet {
+   list-style: none;
+   margin: 3px;
+}
+/***************** END TWITTER TWEETS *******************/

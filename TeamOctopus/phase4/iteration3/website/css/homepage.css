@@ -1,0 +1,190 @@
+/* Banner Rules */
+#title-banner {
+   /* position: absolute;
+    right: 250px;
+    top: 100px;
+    display: inline-block;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #dedede;*/
+    width:50%;
+    right: 20%;
+    margin: 0 auto;
+
+}
+
+#logo-img {
+   position: relative;
+   left: 25%;
+   background-color: #dedede;
+   margin-bottom: 10px;
+}
+
+#moto {
+    position: relative;
+    left: 23%;
+	font-size: 20px;
+    font-weight: 450px;
+    line-height: 30px;
+    color: #312722;
+}
+/* End of Banner Rules */
+
+/* Guide Rules */
+#guide {
+    float: left;
+    position: relative;
+    left: 5%;
+    /*top: 475px;*/
+    padding: 15px;
+    margin-bottom: 35px;
+    background-color: #dedede;
+    border-radius: 10px;
+    width: 71%;
+}
+
+.guide-item {
+    text-align: center;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+
+}
+
+#guide table {
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 16px;
+    color: #312722;
+    width: 100%;
+}
+
+thead {
+    background-color: #4E4845;
+    color: #312722;
+}
+th {
+    padding: 10px;
+    padding-right: 10px;
+    vertical-align: middle;
+    border-right: 1px solid;
+}
+
+th:last-child {
+    border-right: 0px;
+}
+
+tbody tr:nth-child(even){
+    background-color: #645B57;
+}
+
+#guide td:first-child {
+    border-right: 1px solid;
+}
+
+td:last-child {
+    border-right: 0px;
+}
+
+table a {
+    text-decoration: none;
+    color: #312722;
+}
+
+ table a:visited {
+    color: #312722;
+}
+/* End of Table Rules */
+
+/*Sports Table */
+#sports-guide {
+	position:absolute;
+  	bottom: -3%;
+  	left: 24%;
+    background-color: #dedede;
+    padding: 15px 5px 15px 5px;
+    border-radius:10px;
+	width: 25%;
+}
+/* Trending Sidebar */
+#sidebar-container {
+    float: right;
+    position: absolute;
+    right: 4%;
+	bottom: 0px;
+    padding-right: 5px;
+    background-color: #dedede;
+    border-radius: 10px;    
+}
+
+.trending-item {
+    float: right;
+}
+
+.trending-item a {
+    line-height: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #312722;
+}
+
+.trending-img {
+    height: 140px;
+    width: 90px;
+}
+/* End of Trending Sidebar */
+
+/* New Shows Airing Box*/
+#new-shows-box {
+    position:absolute;
+  	bottom: -19.5%;
+  	left: 5%;
+    background-color: #dedede;
+    padding: 15px;
+    border-radius:10px;
+}
+
+#new-shows-box ul {
+    list-style: none;
+}
+
+.new-show {
+    color: #312722;
+}
+/* End of New Shows Airing Box */
+
+/* What Twitter is Saying Box */
+#trending-twitter-box {
+  	position:absolute;
+  	bottom: -13.5%;
+  	right: 23%;
+    background-color: #dedede;
+    border-radius:10px;
+}
+
+.trending-twitter-tweet {
+    list-style: none;
+    color: #312722;
+    padding: 0px;
+    margin: 0px;
+}
+/* End of What Twitter is Saying Box */
+
+/* Misc */
+.over-text {
+    display: block;
+}
+
+.under-text {
+    font-size: 14px;
+    line-height: 8px;
+}
+/* Enf of Misc */
+
+/* Overwrite Footer Bottom*/
+#footer {
+    position:absolute;
+    top:120%;
+}
+/* End of Footer */
+

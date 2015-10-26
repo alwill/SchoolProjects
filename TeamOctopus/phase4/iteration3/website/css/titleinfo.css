@@ -1,0 +1,111 @@
+/* Title overview */
+#title-overview {
+    background-color: #dedede;
+    position: relative;
+    top: 200px;
+    left: 35%;
+    width: 25%;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+#side-text {
+    font-size: 11px;
+}
+
+#title-overview p {
+    text-align: left;
+}
+
+/* End of title overview */
+
+/* top right box */
+#top-right-box {
+    position: absolute;
+    background-color: #dedede;
+    top: 60%;
+    left: 55%;
+    width: 20%;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#top-right-list {
+    list-style-type: none;
+}
+/* End of top right box */
+
+/* Cast Listing */
+#top-left-box {
+    border-radius: 10px;
+    background-color: #dedede;
+    position: absolute;
+    left: 20%;
+    top: 60%;
+    width: 20%;
+    padding: 15px;
+}
+
+#cast-list {
+    list-style-type: none;
+}
+
+/* End of Cast Listing */
+
+/* Upcoming Showings */
+#bottom-left-box {
+    background-color: #dedede;
+    border-radius: 10px;
+    position: absolute;
+    left: 20%;
+    top: 105%;
+    width: 20%;
+    padding: 10px;
+}
+
+#showing-list {
+    list-style-type: none;
+}
+
+#showing-list span {
+    display: block;
+    font-size: 11px;
+}
+/* End of Upcoming Showsings */
+
+/* What Users Are Saying Box */
+#bottom-right-box {
+    background-color: #dedede;
+    border-radius: 10px;
+    position: absolute;
+    left: 55%;
+    top: 97%;
+    width: 20%;
+    padding: 10px;
+}
+
+.content {
+    margin-left: 25px;
+}
+
+/* End of What Users Are Saying Box */
+
+/* overwrites */
+#header {
+
+}
+#content {
+}
+
+#footer {
+    position: absolute;
+    top: 170%;
+}
+
+a {
+    color: #17211D;
+}
+
+a:visited {
+    color: #17211D;
+}
