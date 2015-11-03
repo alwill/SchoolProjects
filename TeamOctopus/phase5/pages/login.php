@@ -1,5 +1,5 @@
 <?php
-require_once("$_SERVER[DOCUMENT_ROOT]/inc/inc.login.php");
+require_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/inc.login.php");
 session_start();
 $pageTitle="Login";
 # Checks if logged in. If NOT logged in, the login button stays the same.
@@ -7,7 +7,7 @@ $pageTitle="Login";
 if(isset($_SESSION['loggedin']))
     $loggedin = $_SESSION['loggedin'];
 
-include_once("$_SERVER[DOCUMENT_ROOT]/inc/header.php");
+include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
 // Body content ?>
 <div id="wrap"> <!-- footer.php CLOSES this tag -->
     <!-- ALL fields have a required attribute. They must be filled. IF NOT, alert is displayed -->
@@ -47,5 +47,5 @@ include_once("$_SERVER[DOCUMENT_ROOT]/inc/header.php");
         </div>
     </div>
 <?php
-include_once("$_SERVER[DOCUMENT_ROOT]/inc/footer.php");
+include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/footer.php");
 ?>

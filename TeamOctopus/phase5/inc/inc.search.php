@@ -1,6 +1,6 @@
 <?php
       
-include("$_SERVER[DOCUMENT_ROOT]/db/tvguruDB.php");
+include("/phase5/db/tvguruDB.php");
 try {
     $con = new PDO(DB_CONNECTION_STRING . ";dbname=test", DB_USER, DB_PWD);
     $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
