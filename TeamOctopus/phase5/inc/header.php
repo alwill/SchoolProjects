@@ -20,11 +20,11 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">TV Guru</a>
+            <a class="navbar-brand" href="/phase5/index.php">TV Guru</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li><a href="/phase5/">Home</a></li>
+              <li><a href="/phase5/index.php">Home</a></li>
               <li><a href="/phase5/pages/profile.php">My Profile</a></li>
               <li><a href="/phase5/pages/topshows.php">Top Shows</a></li>
               <li><a href="/phase5/pages/theater.php">Theater Showtimes</a></li>
