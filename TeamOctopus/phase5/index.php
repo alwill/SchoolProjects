@@ -1,5 +1,4 @@
 <?php
-//FUCK YOU
 session_start();
 $pageTitle="Home";
 # Checks if logged in. If NOT logged in, the login button stays the same.
