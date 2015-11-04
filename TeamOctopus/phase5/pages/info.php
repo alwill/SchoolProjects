@@ -1,24 +1,18 @@
 <?php
-require_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/inc.index.php");
+require_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/inc.info.php");
 session_start();
-$pageTitle="Home";
 # Checks if logged in. If NOT logged in, the login button stays the same.
 # If IS logged in, the login button changes to logout.
 if(isset($_SESSION['loggedin']))
     $loggedin = $_SESSION['loggedin'];
-    
+# Gets title. Title is passed as a GET method. Sets the page title to
+# the movie/tv show title.
+if(isset($_GET['title']))
+    $pageTitle = $_GET['title'];
 include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
 // Body content ?>
 <div id="wrap"> <!-- footer.php CLOSES this tag -->
-    <div class="row-fluid">          
-        <p class="editable text-center"><img src="images/guru.png"></p>        
-    </div>
-    <div class="col-xs-12 col-md-8">     
-        <?php build_guide() ?> 
-    </div>
-    <div class="col-xs-6 col-sm-3">
-        <p>Trending stuff</p>
-    </div>
+<p>This is the info page for <?php echo $pageTitle; ?></p>
 
 <?php
 include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/footer.php");
