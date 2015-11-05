@@ -52,7 +52,7 @@ function build_table($results) {
     $table .= '<table class="table table-striped">
                     <thead>
                         <th scope="col">Title</th>
-                        <th scope="col">Network</th>
+                        <th scope="col">Type</th>
                         <th scope="col">Netflix</th>
                         <th scope="col">Prime</th>
                     </thead>
@@ -60,7 +60,7 @@ function build_table($results) {
     foreach($results as $result){
         $table .= '<tr>
                         <td> ' . " <a href=\"../pages/info.php?title=$result[0]\">$result[0] " . '</td>
-                        <td> NBC ' /* . $result[9] . */ . ' </td>
+                        <td> ' . ($result[7] == "feature" ? "Movie" : "Series") . ' </td>
                         <td> ' . ($result[5] == 1 ? 'Yes' : 'No') . ' </td>
                         <td> ' . ($result[6] == 1 ? 'Yes' : 'No') . ' </td>
                     </td>';
