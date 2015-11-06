@@ -40,7 +40,6 @@ include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
             <input type="submit" class="btn btn-lg btn-block" name="refine" value="Search">
         </form>
     </div>
-</div>
 <?php
 include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/footer.php");
 ?>

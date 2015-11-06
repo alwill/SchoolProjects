@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/phase5/css/bootstrap.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="#">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
 <body>
 <!-- NAVBAR -->
