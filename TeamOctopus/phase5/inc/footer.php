@@ -1,5 +1,4 @@
-</div>
-<footer class="footer">
+<footer class="panel-footer">
   <div class="container">
     <p class="text-muted">&#169; 2015 Team Octopus Interactive Inc. All rights reserved.</p>
   </div>

@@ -47,6 +47,7 @@ include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
             </form>  
         </div>
     </div>
+</div>
 <?php
 include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/footer.php");
 ?>
