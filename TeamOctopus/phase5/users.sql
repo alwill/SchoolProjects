@@ -28,7 +28,6 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `userid` int(11) DEFAULT NULL,
   `username` varchar(20) DEFAULT NULL,
   `password` varchar(30) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
@@ -36,14 +35,6 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `userid`, `username`, `password`, `email`, `favorites`) VALUES
-(11, 0, 'jakking', 'jake', 'jakking@siue.edu', NULL),
-(12, 0, 'jakking', 'jake', 'jakking@siue.edu', NULL),
-(13, 0, 'jakking', 'jake', 'jakking@siue.edu', NULL);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
