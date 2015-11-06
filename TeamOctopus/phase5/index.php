@@ -13,11 +13,13 @@ include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
     <div class="row-fluid">          
         <p class="editable text-center"><img src="images/guru.png"></p>        
     </div>
-    <div class="col-xs-12 col-md-8">     
-        <?php build_guide() ?> 
-    </div>
-    <div class="col-xs-6 col-sm-3">
-        <p>Trending stuff</p>
+    <div class="row">
+        <div class="col-xs-12 col-md-8">     
+            <?php build_guide() ?> 
+        </div>
+        <div class="col-xs-6 col-sm-3">
+            <p>Trending stuff</p>
+        </div>
     </div>
 </div>
 <?php
