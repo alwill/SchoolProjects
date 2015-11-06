@@ -19,7 +19,7 @@ include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
     <div class="col-xs-6 col-sm-3">
         <p>Trending stuff</p>
     </div>
-
+</div>
 <?php
 include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/footer.php");
 ?>

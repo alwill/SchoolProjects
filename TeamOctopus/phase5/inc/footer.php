@@ -1,6 +1,5 @@
-</div>
 <footer class="footer">
-  <div class="container">
+  <div class="footer navbar-fixed-bottom">
     <p class="text-muted">&#169; 2015 Team Octopus Interactive Inc. All rights reserved.</p>
   </div>
 </footer>
