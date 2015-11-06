@@ -28,7 +28,6 @@
               <li><a href="/phase5/index.php">Home</a></li>
               <li><a href="/phase5/pages/profile.php">My Profile</a></li>
               <li><a href="/phase5/pages/topshows.php">Top Shows</a></li>
-              <li><a href="/phase5/pages/theater.php">Theater Showtimes</a></li>
               <li><a href="/phase5/pages/sports.php">Sports</a></li>
             </ul>
             <div class="col-sm-3 col-md-3 pull-right">
