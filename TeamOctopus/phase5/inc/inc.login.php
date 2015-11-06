@@ -22,6 +22,12 @@ function login(){
             session_start();
             $_SESSION['username'] = $_POST['username'];
             $_SESSION['loggedin'] = true;
+            //getting favorites
+            $sql =$con->query("SELECT favorites FROM `users` WHERE `username` = '".$_POST['username']."'");
+            //$sql->bindParam(':username', $_POST['username']);
+            $result = $sql->fetch();
+            $_SESSION['favorites'] = $result['favorites'];
+
             header("Location: /");
             exit();
         }
