@@ -7,7 +7,7 @@ function register(){
 	if($_POST["regPassword"] == $_POST["regRepassword"]){
 		global $con;
 		try {
-			$sql = $con->prepare("INSERT INTO `test`.`users` (`id`, `userid`, `username`, `password`, `email`, `favorites`) VALUES (NULL, 0, :username, :password, :email, NULL)");
+			$sql = $con->prepare("INSERT INTO `test`.`users` (`id`, `username`, `password`, `email`, `favorites`) VALUES (NULL, :username, :password, :email, NULL)");
 			$sql->bindParam(':username', $_POST['regUsername']);
 			$sql->bindParam(':password', $_POST['regPassword']);
 			$sql->bindParam(':email', $_POST['regEmail']);
