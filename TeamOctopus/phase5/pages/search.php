@@ -9,7 +9,7 @@ if(isset($_SESSION['loggedin']))
 query_title();
 include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
 // Body content ?>
-<div id="wrap"> <!-- footer.php CLOSES this tag -->
+<div id="wrap">
     <div class="col-md-8">
         <?php isset($_GET['refine']) ? build_table(refine_query()) : build_table(query_title()); ?>
     </div>
@@ -40,6 +40,7 @@ include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
             <input type="submit" class="btn btn-lg btn-block" name="refine" value="Search">
         </form>
     </div>
+</div>
 <?php
 include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/footer.php");
 ?>

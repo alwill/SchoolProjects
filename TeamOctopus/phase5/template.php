@@ -7,9 +7,10 @@ if(isset($_SESSION['loggedin']))
     $loggedin = $_SESSION['loggedin'];
 include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
 // Body content ?>
-<div id="wrap"> <!-- footer.php CLOSES this tag -->
+<div id="wrap">
 <p>Test</p>
 
+</div>
 <?php
 include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/footer.php");
 ?>

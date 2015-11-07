@@ -59,10 +59,10 @@ function build_table($results) {
                     <tbody>';
     foreach($results as $result){
         $table .= '<tr>
-                        <td> ' . " <a href=\"../pages/info.php?title=$result[0]\">$result[0] " . '</td>
-                        <td> ' . ($result[7] == "feature" ? "Movie" : "Series") . ' </td>
-                        <td> ' . ($result[5] == 1 ? 'Yes' : 'No') . ' </td>
+                        <td> ' . " <a href=\"../pages/info.php?id=$result[0]\">$result[1] " . '</td>
+                        <td> ' . ($result[8] == "feature" ? "Movie" : "Series") . ' </td>
                         <td> ' . ($result[6] == 1 ? 'Yes' : 'No') . ' </td>
+                        <td> ' . ($result[7] == 1 ? 'Yes' : 'No') . ' </td>
                     </td>';
     }
     $table .= '    </tbody>

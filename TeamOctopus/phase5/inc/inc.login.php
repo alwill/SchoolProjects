@@ -28,7 +28,7 @@ function login(){
             $result = $sql->fetch();
             $_SESSION['favorites'] = $result['favorites'];
 
-            header("Location: /");
+            header("Location: /phase5/");
             exit();
         }
     } catch(PDOException $e){

@@ -10,7 +10,7 @@ if(isset($_SESSION['loggedin']))
 include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
 // Body content ?>
     
-<div id="wrap"> <!-- footer.php CLOSES this tag -->
+<div id="wrap">
     <div class="row-fluid">          
         <p class="editable text-center"><img src="images/guru.png"></p>        
     </div>
@@ -22,6 +22,7 @@ include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
             <p>Trending stuff</p>
         </div>
     </div>
+</div>
 <?php
 include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/footer.php");
 ?>

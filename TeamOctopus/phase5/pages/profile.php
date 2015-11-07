@@ -1,6 +1,6 @@
 <?php
 session_start();
-$pageTitle="Template";
+$pageTitle="Profile";
 # Checks if logged in. If NOT logged in, the login button stays the same.
 # If IS logged in, the login button changes to logout.
 if(isset($_SESSION['loggedin']))
@@ -17,11 +17,10 @@ foreach ($favoritesArray as &$fav) {
 echo '</ul>';
 
 ?>
-
-<div id="wrap"> <!-- footer.php CLOSES this tag -->
-
+<div id="wrap">
 
 
+</div>
 <?php
 include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/footer.php");
 ?>

@@ -16,7 +16,7 @@ function register(){
 				session_start();
 				$_SESSION['username'] = $_POST['username'];
 				$_SESSION['loggedin'] = true;
-				header("Location: /");
+				header("Location: /phase5/");
 				exit();
 			}
 		} catch(PDOException $e){
