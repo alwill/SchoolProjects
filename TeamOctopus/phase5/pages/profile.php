@@ -25,17 +25,30 @@ include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
 			}
 		echo '</ul>';
 
-?>		
+?>			
 			</div>
 		<div class="container center-block col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">
 			<ul class = "list-group"><h4>Upcoming Favorites</h4>
+			
+			</ul>
 
+		</div>
+
+	</div>
+	<div class='row'>
+		<div class="container center-block col-sm-5 col-md-6">
+		<ul class = "list-group"><h4>Comment History</h4>
+				<?php
+				include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/inc.usercomments.php");
+				for ($i = 0; $i< count($result); $i++){
+					echo '<li class="list-group-item"><h5><strong>' . $result[$i]['mediaName'] . '</strong></h5>';
+					echo '<p>' .  $result[$i]['comment'] . '</p></li>';
+				}
+				?>
 			</ul>
 
 		</div>
 	</div>
-
-
 </div>
 <?php
 include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/footer.php");
