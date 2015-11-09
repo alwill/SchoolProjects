@@ -26,7 +26,7 @@ function login(){
             $sql =$con->query("SELECT favorites FROM `users` WHERE `username` = '".$_POST['username']."'");
             //$sql->bindParam(':username', $_POST['username']);
             $result = $sql->fetch();
-            $_SESSION['favorites'] = $result['favorites'];
+            $_SESSION['favorites'] = explode(',',$result['favorites']);
 
             header("Location: /phase5/");
             exit();

@@ -5,21 +5,35 @@ $pageTitle="Profile";
 # If IS logged in, the login button changes to logout.
 if(isset($_SESSION['loggedin'])){
     $loggedin = $_SESSION['loggedin'];
-	$favoritesArray = explode(',', $_SESSION['favorites']);
-	echo '<ul>';
-	foreach ($favoritesArray as &$fav) {
-    echo '<li>' . $fav . '</li>';
-}
-echo '</ul>';
 }
 else{
 header("Location: /phase5/pages/login.php");
-
 }
 include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
+
 // Body content
 ?>
-<div id="wrap">
+    <div id="wrap">
+    <h3 class="page-header" align="center">Your Profile</h3>
+    	<div Class="row">
+    		<div class="container center-block col-sm-5 col-md-6">
+
+			<ul class = "list-group"><h4>Favorites</h4>
+			<?php
+			foreach ($_SESSION['favorites'] as &$fav) {
+    		echo '<li class="list-group-item">' . $fav . '</li>';
+			}
+		echo '</ul>';
+
+?>		
+			</div>
+		<div class="container center-block col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">
+			<ul class = "list-group"><h4>Upcoming Favorites</h4>
+
+			</ul>
+
+		</div>
+	</div>
 
 
 </div>
