@@ -7,6 +7,7 @@ if(isset($_SESSION['loggedin']))
     $loggedin = $_SESSION['loggedin'];
 include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
 // Body content ?>
+<div class="wrap">
     <link rel="stylesheet" type="text/css" href="/phase5/css/sports.css">
     <div class="dropdown">
         <script src="/phase5/js/sports.js"></script>
@@ -16,8 +17,7 @@ include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
 
         </div>
     </div>
-    <div id="wrap"> <!-- footer.php CLOSES this tag -->
-
+</div>
 <?php
 include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/footer.php");
 ?>

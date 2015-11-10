@@ -9,7 +9,7 @@ if(isset($_SESSION['loggedin']))
 query_title();
 include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
 // Body content ?>
-<div id="wrap">
+<div class="wrap">
     <div class="col-md-8">
         <?php isset($_GET['refine']) ? build_table(refine_query()) : build_table(query_title()); ?>
     </div>

@@ -12,7 +12,7 @@ if(isset($_GET['id']))
 $pageTitle = getPageTitle();
 include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
 // Body content ?>
-<div id="wrap">
+<div class="wrap">
     <div class="row">
         <div class="col-md-8">
             <img class="img-responsive img-rounded pull-right" src="../images/info_banner_1.jpg" alt="<?php getTitle() ?>">

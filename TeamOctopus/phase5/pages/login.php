@@ -10,7 +10,7 @@ if(isset($_SESSION['loggedin']))
 
 include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
 // Body content ?>
-<div id="wrap">
+<div class="wrap">
     <!-- ALL fields have a required attribute. They must be filled. IF NOT, alert is displayed -->
     <div class="row">
         <div class="container center-block">

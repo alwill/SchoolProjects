@@ -10,7 +10,7 @@ if(isset($_SESSION['loggedin']))
 include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
 // Body content ?>
     
-<div id="wrap">
+<div class="wrap">
     <div class="row-fluid">          
         <p class="editable text-center"><img src="images/guru.png"></p>        
     </div>
