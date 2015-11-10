@@ -11,6 +11,11 @@ include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
     <div class="dropdown">
         <script src="/phase5/js/sports.js"></script>
     </div>
+    <div class="row">
+        <div class="col-md-4" id="sportsBox">
+
+        </div>
+    </div>
     <div id="wrap"> <!-- footer.php CLOSES this tag -->
 
 <?php
