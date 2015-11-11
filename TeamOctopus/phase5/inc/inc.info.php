@@ -75,8 +75,7 @@ function postComment($comment) {
         echo $e;
         return;
     }
-    echo "Comment posted.";
-
+    buildCommentSection(getComments());
 }
 
 function getComments() {

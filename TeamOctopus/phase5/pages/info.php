@@ -47,13 +47,17 @@ include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
             <p> date 1 </p>
         </div>
     </div>
-    <div clas="row">
+    <div class="row">
+        <div id="comment-section" class="container">
             <h2> What Users Are Saying </h2>
-            <?php buildCommentSection(getComments()); ?>
+            <div id="comments">
+                <?php buildCommentSection(getComments()); ?>
+            </div>
             <div class="container">
                 <textarea id="comment" name="comment" cols="50" rows="4"></textarea>
                 <input id="post" type="submit" value="Post Comment">
             </div>
+        </div>
     </div>
 </div>
 <script type="text/javascript" src="../js/info.js"></script>

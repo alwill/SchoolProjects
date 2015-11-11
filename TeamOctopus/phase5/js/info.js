@@ -19,8 +19,8 @@ $(document).ready(function() {
             type: 'POST',
             url: '../inc/inc.info.php',
             data: {comment: text},
-            success: function(data) {
-                alert(data);
+            success: function(data) {        
+                $("#comments").html(data);
             }
         });
     });
