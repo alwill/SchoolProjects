@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title><?= isset($pageTitle) ? $pageTitle : "TV Guru"?></title>
     <!--<link rel="stylesheet" type="text/css" href="../css/bootstrap.css"> -->
-    <link rel="stylesheet" type="text/css" href="/phase5/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/phase5/css/bootstrap_slate.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="#">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

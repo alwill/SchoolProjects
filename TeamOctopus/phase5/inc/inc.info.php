@@ -95,7 +95,7 @@ function buildCommentSection($comments) {
     $commentSection = "";
     if(is_array($comments) || is_object($comments)){
         foreach($comments as $comment) {
-            $commentSection .= "<h5>$comment[3]</h5>\n
+            $commentSection .= "<h4>$comment[3]</h4>\n
                                 <p class=\"well\">$comment[2]</p>\n";
         }
     }
