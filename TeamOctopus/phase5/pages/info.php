@@ -7,8 +7,10 @@ if(isset($_SESSION['loggedin']))
     $loggedin = $_SESSION['loggedin'];
 # Gets ID. ID is passed as a GET method. Creates a Title class
 # this class contains all the title data
-if(isset($_GET['id']))
+if(isset($_GET['id'])) {
     getTitleData($_GET['id']);
+    $_SESSION['title_id'] = $_GET['id'];
+}
 $pageTitle = getPageTitle();
 // To get the title for favoriting
 $_SESSION['title'] = $pageTitle;
@@ -30,11 +32,11 @@ include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
         </div>
     </div>
     <div class="row">
-        <div class="col-md-4">
+        <div class="panel panel-heading col-md-4">
             <h2> Cast </h2>
             <?php listCast() ?>
         </div>
-        <div class="col-md-4">
+        <div class="panel-heading col-md-4">
             <h2> Upcoming Showings </h2>
             <p> date 1 </p>
             <p> date 1 </p>
@@ -46,6 +48,23 @@ include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
             <p> date 1 </p>
             <p> date 1 </p>
         </div>
+        <div class="panel panel-heading col-md-4">
+            <?php if(getTitleType() == "feature") : ?>
+                <h2>Production Stats </h2>
+                <p> Cool stat </p>
+                <p> Cool stat </p>
+                <p> Cool stat </p>
+                <p> Cool stat </p>
+                <p> Cool stat </p>
+            <?php else : ?>
+                <h2>Episode Guide</h2>
+                <p> next showing at this time</p>
+                <p> next showing at this time</p>
+                <p> next showing at this time</p>
+                <p> next showing at this time</p>
+                <p> next showing at this time</p>
+            <?php endif; ?>
+        </div>
     </div>
     <div class="row">
         <div id="comment-section" class="container">
@@ -54,12 +73,12 @@ include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
                 <?php buildCommentSection(getComments()); ?>
             </div>
             <?php if(isset($_SESSION['loggedin'])) : ?>
-                <div class="container">
-                    <textarea id="comment" name="comment" cols="50" rows="4"></textarea>
-                    <input id="post" type="submit" value="Post Comment">
+                <div class="form-group">
+                    <textarea id="comment" name="comment" cols="75" rows="4"></textarea>
+                    <input class="btn btn-lg pull-right" id="post" type="submit" value="Post Comment">
                 </div>
             <?php else : ?>
-                <div class="container">
+                <div class="center-block">
                     <p> You must be <a href="login.php">logged in</a> to post comments. </p>
                 </div>
             <?php endif; ?>

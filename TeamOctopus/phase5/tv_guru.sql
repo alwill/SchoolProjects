@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.0.2
+-- version 4.1.14
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 11, 2015 at 05:22 AM
--- Server version: 10.0.17-MariaDB
--- PHP Version: 5.6.14
+-- Generation Time: Nov 11, 2015 at 06:21 PM
+-- Server version: 5.6.17
+-- PHP Version: 5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `tv_guru`
@@ -26,42 +26,30 @@ SET time_zone = "+00:00";
 -- Table structure for table `comments`
 --
 
-CREATE TABLE `comments` (
-  `id` int(11) NOT NULL,
-  `title` varchar(30) DEFAULT NULL,
-  `comment` varchar(300) DEFAULT NULL,
-  `username` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `comments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title_id` int(11) NOT NULL,
+  `title` varchar(30) NOT NULL,
+  `username` varchar(30) NOT NULL,
+  `comment` varchar(300) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `comments`
 --
 
-INSERT INTO `comments` (`id`, `title`, `comment`, `username`) VALUES
-(1, 'The Good Wife', 'this show sucks.', 'jakking'),
-(3, 'Walking Dead', 'This show is the Michael Jordan at being average lately', 'jakking'),
-(6, 'The Great Escape', 'Maybe', 'jack'),
-(8, 'The Great Escape', 'I like this movie.', 'jack'),
-(9, 'The Great Escape', 'I like this movie.', 'jack'),
-(10, 'The Great Escape', 'I like this movie.', 'jack'),
-(11, 'The Great Escape', 'kjsaldkfjasdfsdafsa lskdjf aslkdfjalskdf asd\nflksjadf', 'jack'),
-(14, 'The Great Escape', 'what\n', 'jack'),
-(15, 'The Good Wife', 'Is it working\n', 'jack'),
-(16, 'City of God', 'Never seen it.', 'jack'),
-(17, 'City of God', 'sadfsf', 'jack'),
-(18, 'City of God', 'asdfsaf', 'jack'),
-(19, 'City of God', 'dfgd', 'jack'),
-(20, 'City of God', 'sdf', 'jack'),
-(21, 'City of God', 'asdfsf', 'jack'),
-(22, 'City of God', 'asdf', 'jack'),
-(23, 'City of God', 'asdfsf', 'jack'),
-(24, 'City of God', 'asdf', 'jack'),
-(25, 'City of God', 'asdf', 'jack'),
-(26, 'City of God', 'jlkjlkjsdfl asdfjklaskdjf ddf', 'jack'),
-(27, 'City of God', 'yes\n', 'jack'),
-(28, 'City of God', 'yes\n', 'jack'),
-(29, 'The Shawshank Redemption', 'I really like this movie.\n', 'jack'),
-(30, 'Schindler''s List', 'Never seen it', 'jack');
+INSERT INTO `comments` (`id`, `title_id`, `title`, `username`, `comment`) VALUES
+(1, 101, 'The Dark Knight', 'jack', 'Maybe'),
+(2, 74, 'The Walking Dead', 'jack', 'Making posts for trending test.'),
+(3, 114, 'Goodfellas', 'jack', 'Another post for trending'),
+(4, 107, 'Fight Club', 'jack', 'Trending'),
+(5, 107, 'Fight Club', 'jack', 'To the top'),
+(6, 104, 'Pulp Fiction', 'jack', 'Last one'),
+(7, 104, 'Pulp Fiction', 'jack', 'Does the text box clear on posting?'),
+(8, 104, 'Pulp Fiction', 'jack', 'It does'),
+(9, 114, 'Goodfellas', 'jack', 'sdf'),
+(10, 92, 'The Sopranos', 'jack', 'kjsdfsdfs');
 
 -- --------------------------------------------------------
 
@@ -69,14 +57,15 @@ INSERT INTO `comments` (`id`, `title`, `comment`, `username`) VALUES
 -- Table structure for table `sports`
 --
 
-CREATE TABLE `sports` (
-  `ID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `sports` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `SPORT` varchar(5) DEFAULT NULL,
   `TEAM_1` varchar(20) DEFAULT NULL,
   `TEAM_2` varchar(20) DEFAULT NULL,
   `SCORE` varchar(10) DEFAULT NULL,
-  `TIME` varchar(15) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `TIME` varchar(15) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `sports`
@@ -102,8 +91,8 @@ INSERT INTO `sports` (`ID`, `SPORT`, `TEAM_1`, `TEAM_2`, `SCORE`, `TIME`) VALUES
 -- Table structure for table `titles`
 --
 
-CREATE TABLE `titles` (
-  `ID` int(5) NOT NULL,
+CREATE TABLE IF NOT EXISTS `titles` (
+  `ID` int(5) NOT NULL AUTO_INCREMENT,
   `TITLE` char(40) NOT NULL,
   `RATING` float NOT NULL,
   `PARENTAL_GUIDE` char(9) NOT NULL,
@@ -114,8 +103,9 @@ CREATE TABLE `titles` (
   `TYPE` char(9) NOT NULL,
   `TIME` time NOT NULL,
   `RUNTIME` int(4) NOT NULL,
-  `NETWORK` char(9) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `NETWORK` char(9) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=348 ;
 
 --
 -- Dumping data for table `titles`
@@ -481,13 +471,14 @@ INSERT INTO `titles` (`ID`, `TITLE`, `RATING`, `PARENTAL_GUIDE`, `PLOT`, `CAST`,
 -- Table structure for table `users`
 --
 
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(20) NOT NULL,
   `password` varchar(30) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `favorites` text
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `favorites` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `users`
@@ -496,58 +487,6 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `favorites`) VALUES
 (1, 'jack', 'jack', 'jack@jack.com', 'Desperate Housewives, ,The Good Wife,Good Will Hunting,The Great Escape,The Great Dictator');
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `comments`
---
-ALTER TABLE `comments`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `sports`
---
-ALTER TABLE `sports`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `titles`
---
-ALTER TABLE `titles`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `comments`
---
-ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
---
--- AUTO_INCREMENT for table `sports`
---
-ALTER TABLE `sports`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
---
--- AUTO_INCREMENT for table `titles`
---
-ALTER TABLE `titles`
-  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=348;
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

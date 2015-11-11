@@ -11,10 +11,16 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
+
+/* REMINDER, THERE'S ANOTEHR RULE AT THE END OF THE SHEET:; a:hover */
 .wrap {
   padding-left: 20px;
   padding-right: 20px;
 }
+
+
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -7302,4 +7308,8 @@ a.list-group-item-danger.active:focus {
 .panel-warning .panel-heading,
 .panel-info .panel-heading {
   border-color: #000;
+}
+
+a:hover {
+  text-decoration: none;
 }

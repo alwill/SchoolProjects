@@ -18,7 +18,7 @@ function getTrendingTitles(){
             Limits the result by 5. 
             I.E. Top 5 most commented shows in the database.
         */
-        $sql = "SELECT `title`, COUNT(`title`) AS hot FROM `comments` GROUP BY `title` ORDER BY hot DESC LIMIT 5";
+        $sql = "SELECT `title`, COUNT(`title`), `title_id` AS hot FROM `comments` GROUP BY `title` ORDER BY hot DESC LIMIT 5";
         $sql = $con->prepare($sql);
         $sql->execute();
         buildTrendingList($sql->fetchAll());
@@ -29,12 +29,35 @@ function getTrendingTitles(){
 
 function buildTrendingList($titles) {
     foreach($titles as $title){
+        $num = rand(1, 20);
         echo "<div class=\"panel-body\">\n
-                    <p><a href=\"#\"><img class=\"img-rounded\" src=\"images/trending_1.jpg\">
+                    <p><a href=\"/phase5/pages/info.php?id=$title[2]\"><img class=\"img-rounded\" src=\"images/trending_$num.jpg\">
                     &nbsp;&nbsp;&nbsp; $title[0]</a></p>\n
               </div>\n";
     }
 }
+
+function getRecentComments() {
+    global $con;
+    try {
+        $sql = "SELECT `comment`, username, `id`, `title`, `title_id` FROM `comments` ORDER BY `id` DESC LIMIT 3";
+        $sql = $con->prepare($sql);
+        $sql->execute();
+        buildRecentComments($sql->fetchAll());
+    } catch (PDOException $e) {
+        echo $e;
+    }
+}
+
+function buildRecentComments($comments) {
+    foreach($comments as $comment){
+        echo "<div class=\"panel-body\">\n
+                    <p>$comment[1] on <a href=\"/phase5/pages/info.php?id=$comment[4]\">$comment[3]</a></p>\n
+                    <p class=\"well\">$comment[0]</p>\n
+              </div>\n";
+    }
+}
+
 function get_time($offset){
     /*
         Plan is to somehow use offset to add 30 minutes per offset

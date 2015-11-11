@@ -65,11 +65,12 @@ function postComment($comment) {
     session_start();
     global $con;
     try {
-        $sql = "INSERT INTO `comments` (`id`, `title`, `comment`, `username`) VALUES (NULL, :title, :comment, :name)";
+        $sql = "INSERT INTO `comments` (`id`, `title_id`, `title`, `username`, `comment`) VALUES (NULL, :title_id, :title, :name, :comment)";
         $sql = $con->prepare($sql);
+        $sql->bindParam(':title_id', $_SESSION['title_id']);
         $sql->bindParam(':title', $_SESSION['title']);
-        $sql->bindParam(':comment', $comment);
         $sql->bindParam(':name', $_SESSION['username']);
+        $sql->bindParam(':comment', $comment);
         $sql->execute();
     } catch(PDOException $e) {
         echo $e;
@@ -96,7 +97,7 @@ function buildCommentSection($comments) {
     if(is_array($comments) || is_object($comments)){
         foreach($comments as $comment) {
             $commentSection .= "<h4>$comment[3]</h4>\n
-                                <p class=\"well\">$comment[2]</p>\n";
+                                <p class=\"well\">$comment[4]</p>\n";
         }
     }
     echo $commentSection;
@@ -162,14 +163,21 @@ function listCast() {
     // cast in DB is comma delimited. explodes into an array. Echos each person
     global $title;
     $cast = explode(",", $title->cast);
-    foreach($cast as $person)
+    foreach($cast as $person){
+        $num = rand(1, 20);
         // Messed up when adding cast. There's an extra comma at the end.
         // ctype_space checks for just space in string. Which is what that extra element is.
         if(!ctype_space($person)) 
-            echo "<p> <img class=\"img-rounded\" src=\"../images/actor_thumbnail.jpeg\">&nbsp; $person</p>";
+            echo "<p> <img class=\"img-rounded\" src=\"../images/actor_$num.jpg\">&nbsp; $person</p>";
+    }
 }
 
 function listShowings() {
     global $title;
+    return "Yes";
+}
 
+function getTitleType() {
+    global $title;
+    return $title->type;
 }

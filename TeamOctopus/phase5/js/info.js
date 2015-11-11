@@ -25,6 +25,7 @@ $(document).ready(function() {
             data: {comment: text},
             success: function(data) {        
                 $("#comments").html(data);
+                $("#comment").val("");
             }
         });
     });
