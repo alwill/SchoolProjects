@@ -26,7 +26,7 @@ include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
         </div>
     </div>
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-xs-6 col-md-4">
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h4>More Stuff 1</h4>
@@ -36,7 +36,7 @@ include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-xs-6 col-md-4">
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h4>Recent Comments</h4>
@@ -46,7 +46,7 @@ include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
         </div>
     </div>
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-xs-6 col-md-4">
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h4>Favorites?</h4>
@@ -56,7 +56,7 @@ include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
                 </div>
             </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-xs-12 col-md-8">
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h4>Sports?</h4>
