@@ -1,6 +1,40 @@
 <?php
 date_default_timezone_set("America/Chicago");
+include("$_SERVER[DOCUMENT_ROOT]/phase5/db/tvguruDB.php");
+try {
+    $con = new PDO(DB_CONNECTION_STRING, DB_USER, DB_PWD);
+    $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo $e->getMessage();
+}
 
+function getTrendingTitles(){
+    global $con;
+    try {
+        /*
+            Gets the number of comments for each title with comments.
+            Takes that number, calls it "hot". Groups that number with their related title
+            Orders the titles by their "hot" factor in desending order. Greatest to smallest.
+            Limits the result by 5. 
+            I.E. Top 5 most commented shows in the database.
+        */
+        $sql = "SELECT `title`, COUNT(`title`) AS hot FROM `comments` GROUP BY `title` ORDER BY hot DESC LIMIT 5";
+        $sql = $con->prepare($sql);
+        $sql->execute();
+        buildTrendingList($sql->fetchAll());
+    } catch (PDOException $e) {
+        echo $e;
+    }
+}
+
+function buildTrendingList($titles) {
+    foreach($titles as $title){
+        echo "<div class=\"panel-body\">\n
+                    <p><a href=\"#\"><img class=\"img-rounded\" src=\"images/trending_1.jpg\">
+                    &nbsp;&nbsp;&nbsp; $title[0]</a></p>\n
+              </div>\n";
+    }
+}
 function get_time($offset){
     /*
         Plan is to somehow use offset to add 30 minutes per offset
