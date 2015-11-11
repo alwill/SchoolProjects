@@ -53,10 +53,16 @@ include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
             <div id="comments">
                 <?php buildCommentSection(getComments()); ?>
             </div>
-            <div class="container">
-                <textarea id="comment" name="comment" cols="50" rows="4"></textarea>
-                <input id="post" type="submit" value="Post Comment">
-            </div>
+            <?php if(isset($_SESSION['loggedin'])) : ?>
+                <div class="container">
+                    <textarea id="comment" name="comment" cols="50" rows="4"></textarea>
+                    <input id="post" type="submit" value="Post Comment">
+                </div>
+            <?php else : ?>
+                <div class="container">
+                    <p> You must be <a href="login.php">logged in</a> to post comments. </p>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 </div>
