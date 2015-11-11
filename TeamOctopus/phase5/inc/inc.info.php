@@ -7,7 +7,101 @@ try {
 } catch (PDOException $e) {
     echo $e->getMessage();
 }
+
+if(isset($_POST['favorite'])) {
+    switch($_POST['favorite']) {
+        case 'Favorite':
+            favorite();
+            break;
+        case 'Unfavorite':
+            unfavorite();
+            break;
+    }
+
+}
+
+if(isset($_POST['comment'])) 
+    postComment($_POST['comment']);
+
 $title = new Title;
+
+function favorite() {
+    session_start();
+    global $con;
+    try {
+        $sql = "UPDATE `users` SET `favorites` = CONCAT(`favorites`, :title) WHERE `users`.`username` = :name";
+        $sql = $con->prepare($sql);
+        $title = $_SESSION['title'] . ",";
+        $sql->bindParam(':title', $title);
+        $sql->bindParam(':name', $_SESSION['username']);
+        $sql->execute();
+        array_push($_SESSION['favorites'], $_SESSION['title']);
+    } catch (PDOException $e) {
+        echo "$e";
+        return;
+    }
+    echo $_SESSION['title'] . " added to favorites";
+}
+
+function unfavorite() {
+    session_start();
+    $_SESSION['favorites'] = array_diff($_SESSION['favorites'], array($_SESSION['title']));
+    $favorites = implode(",", $_SESSION['favorites']);
+    try {
+        global $con;
+        $sql = "UPDATE `users` SET `favorites` = :favorites WHERE `users`.`username` = :name";
+        $sql = $con->prepare($sql);
+        $sql->bindParam(':favorites', $favorites);
+        $sql->bindParam(':name', $_SESSION['username']);
+        $sql->execute();
+    } catcH(PDOException $e) {
+        echo "Must be logged in.";
+        return;
+    }
+    echo $_SESSION['title'] . " removed from favorites";
+}
+
+function postComment($comment) {    
+    session_start();
+    global $con;
+    try {
+        $sql = "INSERT INTO `comments` (`id`, `title`, `comment`, `username`) VALUES (NULL, :title, :comment, :name)";
+        $sql = $con->prepare($sql);
+        $sql->bindParam(':title', $_SESSION['title']);
+        $sql->bindParam(':comment', $comment);
+        $sql->bindParam(':name', $_SESSION['username']);
+        $sql->execute();
+    } catch(PDOException $e) {
+        echo $e;
+        return;
+    }
+    echo "Comment posted.";
+
+}
+
+function getComments() {
+    global $con;
+    try {
+        $sql = "SELECT * FROM `comments` WHERE `title` = :title";
+        $sql = $con->prepare($sql);
+        $sql->bindParam(':title', $_SESSION['title']);
+        $sql->execute();
+        buildCommentSection($sql->fetchAll());
+    } catch(PDOException $e) {
+        echo $e;
+    }
+}
+
+function buildCommentSection($comments) {
+    $commentSection = "";
+    if(is_array($comments) || is_object($comments)){
+        foreach($comments as $comment) {
+            $commentSection .= "<h5>$comment[3]</h5>\n
+                                <p class=\"well\">$comment[2]</p>\n";
+        }
+    }
+    echo $commentSection;
+}
 
 function getTitleData($id){
     // Queries the DB for the ID number. Returns all the title info.
