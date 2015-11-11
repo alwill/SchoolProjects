@@ -1,5 +1,7 @@
 <?php
 
+
+
 include("$_SERVER[DOCUMENT_ROOT]/phase5/db/tvguruDB.php");
 try {
     $con = new PDO(DB_CONNECTION_STRING, DB_USER, DB_PWD);
@@ -9,19 +11,27 @@ try {
 }
 
 
-$sql="SELECT * FROM sports WHERE sport = (:sport)";
+$param = $_GET['sport'];
+if($param == "current"){
+    $sql="SELECT * FROM sports WHERE time <> 'final'";
+    $caption = "Games curretnly airing";
+}else {
+    $sql = "SELECT * FROM sports WHERE sport = (:sport)";
+    $caption = $param;
+}
 $sql = $con->prepare($sql);
 $sql->bindParam(':sport',$_GET['sport']);
 $sql->execute();
 
-echo '<table class="table table-striped">
+echo "<table class='table table-striped'>
+<caption>$caption</caption>
 <tr>
 <th>Team</th>
 <th>vs</th>
 <th>Team</th>
 <th>Score</th>
 <th>Time</th>
-</tr>';
+</tr>";
 foreach($sql->fetchAll() as $row){
     echo "<tr>";
     echo "<td>" . $row['TEAM_1'] . "</td>";
@@ -33,4 +43,6 @@ foreach($sql->fetchAll() as $row){
 }
 echo "</table>";
 $sql->closeCursor();
+
+
 ?>

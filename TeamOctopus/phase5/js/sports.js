@@ -3,6 +3,7 @@
  */
 
 $(function(){
+    showSport("");
     var button = '<form>';
     button += '<select name="sports" onchange="showSport(this.value)">';
     button += '<option value="">Select a sport:</option>';
@@ -17,10 +18,13 @@ $(function(){
 
 
 function showSport(str) {
-    if (str == "") {
+   /*if (str == "") {
         document.getElementById("sportsBox").innerHTML = "";
         return;
-    } else {
+    } else {*/
+        if(str == ""){
+            str = "current";
+        }
         if (window.XMLHttpRequest) {
             // code for IE7+, Firefox, Chrome, Opera, Safari
             xmlhttp = new XMLHttpRequest();
@@ -35,5 +39,5 @@ function showSport(str) {
         }
         xmlhttp.open("GET","../inc/getSports.php?sport="+str,true);
         xmlhttp.send();
-    }
+    //}
 }
