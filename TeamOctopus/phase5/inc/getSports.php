@@ -1,7 +1,5 @@
 <?php
 
-
-
 include("$_SERVER[DOCUMENT_ROOT]/phase5/db/tvguruDB.php");
 try {
     $con = new PDO(DB_CONNECTION_STRING, DB_USER, DB_PWD);
@@ -31,6 +29,7 @@ echo "<table class='table table-striped'>
 <th>Team</th>
 <th>Score</th>
 <th>Time</th>
+
 </tr>";
 foreach($sql->fetchAll() as $row){
     echo "<tr>";
@@ -39,6 +38,7 @@ foreach($sql->fetchAll() as $row){
     echo "<td>" . $row['TEAM_2'] . "</td>";
     echo "<td>" . $row['SCORE'] . "</td>";
     echo "<td>" . $row['TIME'] . "</td>";
+
     echo "</tr>";
 }
 echo "</table>";
