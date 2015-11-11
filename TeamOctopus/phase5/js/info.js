@@ -7,6 +7,10 @@ $(document).ready(function() {
             data: {favorite: button.val()},
             success: function(data) {
                 alert(data);
+                if(button.val() == "Favorite")
+                    button.val("UnFavorite");
+                else
+                    button.val("Favorite");
             }
         });
     });
