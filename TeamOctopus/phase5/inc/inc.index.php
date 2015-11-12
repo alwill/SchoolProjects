@@ -58,6 +58,22 @@ function buildRecentComments($comments) {
     }
 }
 
+function getTitle($network, $time){
+global $con;
+    try {
+        $sql = "SELECT * FROM `titles` WHERE network = " . $network . "AND time =" . convertTime($time). ":00";
+        $sql = $con->prepare($sql);
+        $sql->execute();
+        return $sql->fetchAll();
+    } catch (PDOException $e) {
+        echo $e;
+    }
+}
+
+function convertTime($time){
+    return date("H:i", strtotime($time));
+}
+
 function get_time($offset){
     /*
         Plan is to somehow use offset to add 30 minutes per offset
@@ -65,6 +81,12 @@ function get_time($offset){
     */
     $hours = date('h');
     $minutes = (date('i') > 30) ? '30' : '00';
+    $minutes = $minutes + $offset;
+    if($minutes >= 60){
+        $hours = $hours +(int)($minutes/60);
+        $minutes = $minutes % 60;
+    }
+    $minutes = ($minutes==0) ? '00' : $minutes;
     return "$hours:$minutes" . date('A');
 }
 
@@ -73,20 +95,25 @@ function build_guide(){
         This builds the guide. Currently using hardcoded data. 
         Not sure how to go about this.
     */
+
+    $offset=0;
     echo '
     <div>
             <h3 class="page-header">What\'s Currently On?</h3>
             <table class="table table-striped">
                 <thead>
-                    <th class="col-md-3" scope="col"><a href="#">&#9664;</a></th>
-                    <th scope="col">' . get_time(0) . '</th>
-                    <th scope="col">' . get_time(0) . '</th>
-                    <th scope="col">' . get_time(0) . '</th>
-                    <th scope="col">' . get_time(0) . '</th>
-                    <th scope="col">' . get_time(0) . '</th>
-                    <th scope="col">' . get_time(0) . '</th>
-                    <th scope="col">' . get_time(0) . '</th>
-                    <th scope="col"><a href="#">&#9654;</a></th>
+                    <th class="col-md-3" scope="col"><a href="#">&#9664;</a></th>';
+    for($i=0; $i<7; $i++){
+        echo '<th scope="col">' . get_time($offset) . '</th>';
+        $offset = $offset+30;
+    }
+    $offset = 0;
+
+    $cbs = getTitle('CBS', get_time($offset));
+
+
+    echo '
+                <th scope="col"><a href="#">&#9654;</a></th>
                 </thead>
                 <tbody>
                     <tr>
@@ -108,7 +135,7 @@ function build_guide(){
                         <td colspan="2">Blood and Oil</td>
                         <td colspan="2">Quantico</td>
                         <td colspan="2">Forty Eight Hours</td>
-                    </tr>
+                    </tr>0
                     <tr>
                         <td>
                             <strong>NBC</strong>
