@@ -133,6 +133,8 @@ function getTime($offset){
     $minutes = $minutes + $offset;
     if($minutes >= 60){
         $hours = $hours + (int)($minutes / 60);
+        if($hours > 12)
+            $hours -= 12;
         $minutes = $minutes % 60;
     }
     $minutes = ($minutes==0) ? '00' : $minutes;
