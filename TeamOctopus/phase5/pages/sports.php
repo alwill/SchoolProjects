@@ -21,13 +21,13 @@ include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
                 <div class="panel-heading">
                     <h4>SportsChat</h4>
                 </div>
-             <div class="panel-body" id="comments" style = "overflow: scroll;height: 500px";>
+             <div class="panel-body" id="comments" style = "overflow: scroll;height: 500px; overflow-x: hidden;";>
                     <?php buildCommentSection(getComments()) ?>
              </div>
                  <div class="panel-footer">
                     <?php if(isset($_SESSION['loggedin'])) : ?>
                         <div class="form-group">
-                            <textarea id="comment" name="comment" cols="75" rows="3"></textarea>
+                            <textarea id="comment" name="comment" cols="75" rows="3" maxlength="150"></textarea>
                             <input class="btn btn-lg pull-right" id="post" type="submit" value="Post Comment">
                         </div>
                     <?php else : ?>
