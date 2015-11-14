@@ -41,3 +41,18 @@ function showSport(str) {
         xmlhttp.send();
     //}
 }
+
+$(document).ready(function() {
+    $('#post').click(function(){
+        var text = $("#comment").val();
+        $.ajax({
+            type: 'POST',
+            url: '../inc/inc.sports.php',
+            data: {comment: text},
+            success: function(data) {
+                $("#comments").html(data);
+                $("#comment").val("");
+            }
+        });
+    });
+});

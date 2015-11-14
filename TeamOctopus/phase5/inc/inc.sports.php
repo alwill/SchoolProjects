@@ -14,6 +14,9 @@ try {
     echo $e->getMessage();
 }
 
+if(isset($_POST['comment']))
+    postComment($_POST['comment']);
+
 function buildFavSportTable()
 {
     global $con;
@@ -47,4 +50,43 @@ function buildFavSportTable()
     echo "</table>";
     $sql->closeCursor();
 
+}
+
+function getComments()
+{
+    global $con;
+    $sql = "SELECT * FROM sports_comments";
+    $sql = $con->prepare($sql);
+    $sql->execute();
+
+    return $sql->fetchAll();
+
+}
+
+function postComment($comment)
+{
+    session_start();
+    global $con;
+    try {
+        $sql = "INSERT INTO `sports_comments` (`ID`, `USER`, `COMMENT`) VALUES (NULL, :user, :comment)";
+        $sql = $con->prepare($sql);
+        $sql->bindParam(':user', $_SESSION['username']);
+        $sql->bindParam(':comment', $comment);
+        $sql->execute();
+    } catch(PDOException $e) {
+        echo $e;
+        return;
+    }
+    buildCommentSection(getComments());
+}
+
+function buildCommentSection($comments) {
+    $commentSection = "";
+    if(is_array($comments) || is_object($comments)){
+        foreach($comments as $comment) {
+            $commentSection .= "<h4>$comment[1]</h4>\n
+                                <p class=\"well\">$comment[2]</p>\n";
+        }
+    }
+    echo $commentSection;
 }

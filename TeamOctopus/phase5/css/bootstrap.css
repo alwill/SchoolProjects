@@ -6802,4 +6802,8 @@ button.close {
     display: none !important;
   }
 }
+#comments{
+  overflow: scroll;
+  height: 500px;
+}
 /*# sourceMappingURL=bootstrap.css.map */

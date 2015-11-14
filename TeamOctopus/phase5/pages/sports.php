@@ -16,27 +16,27 @@ include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
     <div class="row">
         <div class="col-md-6" id="sportsBox">
         </div>
-        <div class="col-md-6" id="favSport">
-            <?php buildFavSportTable() ?>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-6 col-md-6">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h4>Sports Talk Shows</h4>
-                </div>
-                <div class="panel-body">
-                </div>
-            </div>
-        </div>
         <div class="col-xs-6 col-md-6">
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h4>SportsChat</h4>
                 </div>
-                <div class="panel-body">
-                </div>
+             <div class="panel-body" id="comments" style = "overflow: scroll;height: 500px";>
+                    <?php buildCommentSection(getComments()) ?>
+             </div>
+                 <div class="panel-footer">
+                    <?php if(isset($_SESSION['loggedin'])) : ?>
+                        <div class="form-group">
+                            <textarea id="comment" name="comment" cols="75" rows="3"></textarea>
+                            <input class="btn btn-lg pull-right" id="post" type="submit" value="Post Comment">
+                        </div>
+                    <?php else : ?>
+                        <div class="center-block">
+                            <p> You must be <a href="login.php">logged in</a> to post comments. </p>
+                        </div>
+                    <?php endif; ?>
+                 </div>
+
             </div>
         </div>
     </div>
