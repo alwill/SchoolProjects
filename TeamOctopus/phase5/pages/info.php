@@ -27,7 +27,12 @@ include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
         <div class="col-md-4">
             <h3><?php getTitle() ?></h3>
             <p>Rating: <?php getRating(); ?> / 10 &nbsp;&nbsp;&nbsp; <?php getParentalGuide(); ?> &nbsp;&nbsp;&nbsp;
-                <input type="submit" id="favorite" name="favorite" value= <?= isset($isFavorite) ? "Unfavorite" : "Favorite" ?> ></p>                               
+                <?php if(isset($_SESSION['loggedin'])) : ?>
+                    <input type="submit" id="favorite" name="favorite" value= <?= isset($isFavorite) ? "Unfavorite" : "Favorite" ?> >
+                <?php else : ?>
+                    <strong>Login to Favorite</strong>
+                <?php endif; ?>
+                </p>                               
             <p><?php getPlot() ?></p>
         </div>
     </div>
