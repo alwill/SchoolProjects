@@ -56,3 +56,16 @@ $(document).ready(function() {
         });
     });
 });
+
+
+setInterval(refreshChat, 10000);  // 10 seconds
+function refreshChat() {
+    $.ajax({
+        type: "POST",
+        url: "../inc/inc.sports.php",
+        data: {refresh: "1"},
+        sucess: function(data) {
+            $("#comments").html(data);
+        }
+    });
+}

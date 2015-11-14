@@ -17,6 +17,9 @@ try {
 if(isset($_POST['comment']))
     postComment($_POST['comment']);
 
+if(isset($_POST['refresh']))
+    buildCommentSection(getComments());
+
 function buildFavSportTable()
 {
     global $con;
@@ -55,7 +58,7 @@ function buildFavSportTable()
 function getComments()
 {
     global $con;
-    $sql = "SELECT * FROM sports_comments";
+    $sql = "SELECT * FROM sports_comments ORDER BY ID DESC LIMIT 15";
     $sql = $con->prepare($sql);
     $sql->execute();
 
