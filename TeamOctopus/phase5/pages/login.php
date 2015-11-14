@@ -1,6 +1,5 @@
 <?php
 require_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/inc.login.php");
-require_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/inc.register.php");
 session_start();
 $pageTitle="Login";
 # Checks if logged in. If NOT logged in, the login button stays the same.
@@ -20,7 +19,7 @@ include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
                 <input type="text" id="inputUser" class="form-control" name="username" placeholder="Username" required autofocus>
                 <label for="inputPassword" class="sr-only">Password: </label>
                 <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required>
-                <input type="submit" class="btn btn-lg btn-primary btn-block" name="submit" value="Login">
+                <input type="submit" class="btn btn-lg btn-primary btn-block" name="login" value="Login">
             </form>
             <form class="form-signin col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0" action="login.php" method="POST">
                 <h2 class="form-signin-heading">Register Below</h2>
@@ -42,7 +41,7 @@ include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
                 <h2 class="form-signin-heading">Forgot Your Password?</h2>
                 <label for="inputEmail" class="sr-only">E-mail: </label>
                 <input type="email" id="inputEmailr" class="form-control" name="email" placeholder="E-mail" required>
-                <input type="submit" class="btn btn-lg btn-primary btn-block" name="submit" value="Send E-mail">
+                <input type="submit" class="btn btn-lg btn-primary btn-block" name="recovery" value="Send E-mail">
                 <p>*An e-mail will be sent you with further instructions.</p> 
             </form>  
         </div>

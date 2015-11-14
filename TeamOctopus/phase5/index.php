@@ -6,12 +6,13 @@ $pageTitle="Home";
 # If IS logged in, the login button changes to logout.
 if(isset($_SESSION['loggedin']))
     $loggedin = $_SESSION['loggedin'];
-    
+
+
 include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
 // Body content ?>
     
 <div class="wrap">
-    <div class="row">          
+    <div class="row">
         <p class="editable text-center panel"><img src="images/guru.png"></p>        
     </div>
     <div class="col-xs-12 col-md-8">     

@@ -58,7 +58,7 @@ $(document).ready(function() {
 });
 
 
-setInterval(function() {
+var refreshChat = function() {
     $.ajax({
         type: "POST",
         url: "../inc/inc.sports.php",
@@ -66,4 +66,9 @@ setInterval(function() {
         sucess: function(data) {
             $("#comments").html(data);
         }
-    })}, 10000); // 10 seconds
+    });
+}
+
+$(document).ready(function() {
+    setInterval(refreshChat, 1000);
+});

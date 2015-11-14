@@ -17,7 +17,7 @@ try {
 if(isset($_POST['comment']))
     postComment($_POST['comment']);
 
-if(isset($_POST['refresh']))
+if(isset($_POST['refresh'])) 
     buildCommentSection(getComments());
 
 function buildFavSportTable()

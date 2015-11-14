@@ -1,49 +1,48 @@
 <?php
+include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/inc.profile.php");
 session_start();
 $pageTitle="Profile";
 # Checks if logged in. If NOT logged in, the login button stays the same.
 # If IS logged in, the login button changes to logout.
 if(isset($_SESSION['loggedin'])){
     $loggedin = $_SESSION['loggedin'];
-}
-else{
-header("Location: /phase5/pages/login.php");
+} else {
+    header("Location: /phase5/pages/login.php");
 }
 include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
-
 // Body content
 ?>
-    <div class="wrap">
-    	<div class="row">
-    		<h3 class="page-header" align="center">Your Profile</h3>
-    	</div>
-    	<div Class="row">
-    		<div class="col-md-4">
-				<ul class = "list-group"><h4>Favorites</h4>
-				<?php
-					foreach ($_SESSION['favorites'] as &$fav) {
-		    		echo '<li class="list-group-item">' . $fav . '</li>';
-					}
-				echo '</ul>';
-				?>			
-			</div>
-		<div class="col-md-4">
-			<ul class = "list-group"><h4>Upcoming Favorites</h4>
-			
-			</ul>
-
-		</div>
-		<div class="col-md-4">
-			<ul class = "list-group"><h4>Comment History</h4>
-				<?php
-				include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/inc.usercomments.php");
-				for ($i = 0; $i< count($result); $i++){
-					echo '<li class="list-group-item"><h5><strong>' . $result[$i]['mediaName'] . '</strong></h5>';
-					echo '<p>' .  $result[$i]['comment'] . '</p></li>';
-				}
-				?>
-			</ul>
+<div class="wrap">
+	<div class="row">
+		<h3 class="page-header" align="center">Your Profile</h3>
 	</div>
+	<div Class="row">
+		<div class="col-md-4">
+			<div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4>Favorites</h4>
+            </div>
+            <?php buildUserFavorites(getUserFavorites()); ?>
+            </div>		
+		</div>
+	<div class="col-md-4">
+		<div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4>Upcoming Favorites</h4>
+            </div>
+            <div class="panel-body">
+                <p> stuff </p>
+            </div>
+        </div>
+	</div>
+	<div class="col-md-4">
+		<div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4>Comment History</h4>
+            </div>
+            <?php buildUserComments(getUserComments()); ?>
+        </div>
+   </div>
 </div>
 
 <?php

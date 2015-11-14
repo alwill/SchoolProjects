@@ -8,8 +8,11 @@ try {
     echo $e->getMessage();
 }
 
-if(isset($_POST['submit']))
+if(isset($_POST['login']))
     login();
+
+if(isset($_POST['register']))
+    register();
 
 function login(){
     global $con;
@@ -19,7 +22,6 @@ function login(){
         $sql->bindParam(':password', $_POST['password']);
         $sql->execute();
         if($sql->rowCount() == 1){
-            session_start();
             $_SESSION['username'] = $_POST['username'];
             $_SESSION['loggedin'] = true;
             //getting favorites
@@ -33,6 +35,32 @@ function login(){
         }
     } catch(PDOException $e){
         echo $e->getMessage();
+    }
+}
+
+function register(){
+    if($_POST["regPassword"] == $_POST["regRepassword"]){
+        global $con;
+        try {
+            $sql = $con->prepare("INSERT INTO `users` (`id`, `username`, `password`, `email`, `favorites`) VALUES (NULL, :username, :password, :email, NULL)");
+            $sql->bindParam(':username', $_POST['regUsername']);
+            $sql->bindParam(':password', $_POST['regPassword']);
+            $sql->bindParam(':email', $_POST['regEmail']);
+            $sql->execute();
+            session_start();
+            $_SESSION['username'] = $_POST['regUsername'];
+            $_SESSION['loggedin'] = true;
+            $_SESSION['favorites'] = array();
+            header("Location: /phase5/");
+            exit();
+        } catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
+    else{
+        echo '<script type="text/javascript">';
+        echo 'alert ("passwords do not match");';
+        echo '</script>';
     }
 }
 ?>
