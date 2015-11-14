@@ -18,7 +18,7 @@ function getTrendingTitles(){
             Limits the result by 5. 
             I.E. Top 5 most commented shows in the database.
         */
-        $sql = "SELECT `title`, COUNT(`title`), `title_id` AS hot FROM `comments` GROUP BY `title` ORDER BY hot DESC LIMIT 5";
+        $sql = "SELECT `title`, COUNT(`title`) AS hot, `title_id` AS hot FROM `comments` GROUP BY `title` ORDER BY hot DESC LIMIT 5";
         $sql = $con->prepare($sql);
         $sql->execute();
         buildTrendingList($sql->fetchAll());
@@ -28,6 +28,9 @@ function getTrendingTitles(){
 }
 
 function buildTrendingList($titles) {
+    /*
+        Builds the trending titles box with what was returned from getTrendingTitles().
+    */
     foreach($titles as $title){
         $num = rand(1, 20);
         echo "<div class=\"panel-body\">\n
@@ -38,6 +41,9 @@ function buildTrendingList($titles) {
 }
 
 function getRecentComments() {
+    /*
+        Queries the database for the top 3 highest IDs in comments
+    */
     global $con;
     try {
         $sql = "SELECT `comment`, username, `id`, `title`, `title_id` FROM `comments` ORDER BY `id` DESC LIMIT 3";
@@ -50,6 +56,9 @@ function getRecentComments() {
 }
 
 function buildRecentComments($comments) {
+    /*
+        Builts the recent comments box with what getRecentComments() returned
+    */
     foreach($comments as $comment){
         echo "<div class=\"panel-body\">\n
                     <p>$comment[1] on <a href=\"/phase5/pages/info.php?id=$comment[4]\">$comment[3]</a></p>\n
@@ -59,61 +68,71 @@ function buildRecentComments($comments) {
 }
 
 function getTitle($network, $time){
-global $con;
-    try {
-        $sql = "SELECT * FROM `titles` WHERE network = :network AND time = :time";
-        $sql = $con->prepare($sql);
-        $time = convertTime($time);
-        $time = $time . ":00";
-        $sql->bindParam(":time", $time);
-        $sql->bindParam(":network", $network);
-        $sql->execute();
-        return $sql->fetchAll();
-    } catch (PDOException $e) {
-        echo $e;
-    }
+    /*
+        Gets a title from the titles table.
+    */
+    global $con;
+        try {
+            $sql = "SELECT * FROM `titles` WHERE network = :network AND time = :time";
+            $sql = $con->prepare($sql);
+            $time = convertTime($time);
+            $time = $time . ":00";
+            $sql->bindParam(":time", $time);
+            $sql->bindParam(":network", $network);
+            $sql->execute();
+            return $sql->fetchAll();
+        } catch (PDOException $e) {
+            echo $e;
+        }
 }
 
 function buildRow($network){
+    /*
+        Builds a row. Uses the data return from getTitle() and getTime().
+    */
     $offset = 0;
     $i = 0;
     while($i < 7){
-        $currentTitle = getTitle($network, get_time($offset));
+        $currentTitle = getTitle($network, getTime($offset));
         if (count($currentTitle) == 0){
-            echo ' <td colspan="1">Local Programming</td> ';
-            $collumns =1;
+            echo '<td colspan="1">Local Programming</td>';
+            $collumns = 1;
             $offset += 30;
         }
         else{
-            $collumns = (int)($currentTitle[0]['RUNTIME'] /30);
-            if($i+$collumns > 7 ){
+            $collumns = (int)($currentTitle[0]['RUNTIME'] / 30);
+            if($i + $collumns > 7 ){
                 $collumns = 2;
             }
-            else if ($i+$collumns == 7){
+            else if ($i + $collumns == 7){
                 $collumns += 1;
             }
-            echo ' <td colspan="'. $collumns.'"><a href = "/phase5/pages/info.php?id= ' . $currentTitle[0]['ID']. '">' . $currentTitle[0]['TITLE'] . '</td> ';
+            echo '<td colspan="'. $collumns.'"><a href = "/phase5/pages/info.php?id= ' . $currentTitle[0]['ID']. '">' . $currentTitle[0]['TITLE'] . '</td> ';
             $offset += $currentTitle[0]['RUNTIME'] ;
         }
-        $i += $collumns;
-        
+        $i += $collumns;        
     }
 }
 
 function convertTime($time){
+    /*
+        Converts the time from 12 hour format to 24 hour format. Database time is in
+        24 hour format.
+    */
     return date("H:i", strtotime($time));
 }
 
-function get_time($offset){
+function getTime($offset){
     /*
-        Plan is to somehow use offset to add 30 minutes per offset
-        Not sure how to do that, or if that method would be best.
+        Each offset is thirty minutes. Adds offset to time to get the correct time for
+        each collumn in the guide. 
+        Uses strings and Date to generate a time.
     */
     $hours = date('h');
     $minutes = (date('i') > 30) ? '30' : '00';
     $minutes = $minutes + $offset;
     if($minutes >= 60){
-        $hours = $hours +(int)($minutes/60);
+        $hours = $hours + (int)($minutes / 60);
         $minutes = $minutes % 60;
     }
     $minutes = ($minutes==0) ? '00' : $minutes;
@@ -122,73 +141,60 @@ function get_time($offset){
 
 function build_guide(){
     /*
-        This builds the guide. Currently using hardcoded data. 
-        Not sure how to go about this.
+        This builds the guide. Calls getTime() to get the time plus offset.
+        Querys titles database with network and time to get what is showing at
+        that time. Only the top result is displayed. That data is used on buildRow().
     */
-
     $offset = 0;
-    echo '
-    <div>
+    echo '<div>
             <h3 class="page-header">What\'s Currently On?</h3>
             <table class="table table-striped">
                 <thead>
                     <th class="col-md-3" scope="col"><a href="#">&#9664;</a></th>';
-
-    for($i=0; $i<7; $i++){
-        echo '<th scope="col">' . get_time($offset) . '</th>';
-        $offset = $offset+30;
+    for($i = 0; $i < 7; $i++){
+        echo '<th scope="col">' . getTime($offset) . '</th>';
+        $offset = $offset + 30;
     }
-
-
-
-    echo '
-                <th scope="col"><a href="#">&#9654;</a></th>
+    echo '          <th scope="col"><a href="#">&#9654;</a></th>
                 </thead>
                 <tbody>
                     <tr>
                         <td>
                             <strong>CBS</strong>
                             <span class="show h6">Channel 2</span>
-                        </td>
-                        ';
-buildRow('CBS');
-    echo'
-                    </tr>
+                        </td>';
+    buildRow('CBS');
+    echo'           </tr>
                     <tr>
                         <td>
                             <strong>ABC</strong>
                             <span class="show h6">Channel 30</span>
                         </td>';
 
- buildRow('ABC');                   
-    echo'
-                    </tr>
+    buildRow('ABC');                   
+    echo'           </tr>
                     <tr>
                         <td>
                             <strong>NBC</strong>
                             <span class="show h6">Channel 5</span>
                         </td>';
-buildRow('NBC');
-echo'
-                    </tr>
+    buildRow('NBC');
+    echo'           </tr>
                     <tr>
                         <td>
                             <strong>FOX</strong>
                             <span class="show h6">Channel 4</span>
                         </td>';
-buildRow('FOX');
-echo'
-                    </tr>
+    buildRow('FOX');
+    echo'           </tr>
                     <tr>
                         <td>
                             <strong>PBS</strong>
                             <span class="show h6">Channel 11</span>
                         </td>';
-buildRow('PBS');
-echo'
-                    </tr>
+    buildRow('PBS');
+    echo'           </tr>
                 </tbody>
             </table>
-        </div>
-        ';
+        </div>';
 }
