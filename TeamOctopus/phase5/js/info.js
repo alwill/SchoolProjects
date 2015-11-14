@@ -8,7 +8,7 @@ $(document).ready(function() {
             success: function(data) {
                 alert(data);
                 if(button.val() == "Favorite")
-                    button.val("UnFavorite");
+                    button.val("Unfavorite");
                 else
                     button.val("Favorite");
             }

@@ -61,12 +61,42 @@ function buildRecentComments($comments) {
 function getTitle($network, $time){
 global $con;
     try {
-        $sql = "SELECT * FROM `titles` WHERE network = " . $network . "AND time =" . convertTime($time). ":00";
+        $sql = "SELECT * FROM `titles` WHERE network = :network AND time = :time";
         $sql = $con->prepare($sql);
+        $time = convertTime($time);
+        $time = $time . ":00";
+        $sql->bindParam(":time", $time);
+        $sql->bindParam(":network", $network);
         $sql->execute();
         return $sql->fetchAll();
     } catch (PDOException $e) {
         echo $e;
+    }
+}
+
+function buildRow($network){
+    $offset = 0;
+    $i = 0;
+    while($i < 7){
+        $currentTitle = getTitle($network, get_time($offset));
+        if (count($currentTitle) == 0){
+            echo ' <td colspan="1">Local Programming</td> ';
+            $collumns =1;
+            $offset += 30;
+        }
+        else{
+            $collumns = (int)($currentTitle[0]['RUNTIME'] /30);
+            if($i+$collumns > 7 ){
+                $collumns = 2;
+            }
+            else if ($i+$collumns == 7){
+                $collumns += 1;
+            }
+            echo ' <td colspan="'. $collumns.'"><a href = "/phase5/pages/info.php?id= ' . $currentTitle[0]['ID']. '">' . $currentTitle[0]['TITLE'] . '</td> ';
+            $offset += $currentTitle[0]['RUNTIME'] ;
+        }
+        $i += $collumns;
+        
     }
 }
 
@@ -96,20 +126,19 @@ function build_guide(){
         Not sure how to go about this.
     */
 
-    $offset=0;
+    $offset = 0;
     echo '
     <div>
             <h3 class="page-header">What\'s Currently On?</h3>
             <table class="table table-striped">
                 <thead>
                     <th class="col-md-3" scope="col"><a href="#">&#9664;</a></th>';
+
     for($i=0; $i<7; $i++){
         echo '<th scope="col">' . get_time($offset) . '</th>';
         $offset = $offset+30;
     }
-    $offset = 0;
 
-    $cbs = getTitle('CBS', get_time($offset));
 
 
     echo '
@@ -121,48 +150,42 @@ function build_guide(){
                             <strong>CBS</strong>
                             <span class="show h6">Channel 2</span>
                         </td>
-                        <td colspan="2">Madam Secretary</td>
-                        <td colspan="2"><a href="thegoodwife.html">The Good Wife</a></td>
-                        <td colspan="2">CSI: Cyber</td>
-                        <td colspan="2">Forty Eight Hours</td>
+                        ';
+buildRow('CBS');
+    echo'
                     </tr>
                     <tr>
                         <td>
                             <strong>ABC</strong>
                             <span class="show h6">Channel 30</span>
-                        </td>
-                        <td colspan="2">Once Upon A Time</td>
-                        <td colspan="2">Blood and Oil</td>
-                        <td colspan="2">Quantico</td>
-                        <td colspan="2">Forty Eight Hours</td>
-                    </tr>0
+                        </td>';
+
+ buildRow('ABC');                   
+    echo'
+                    </tr>
                     <tr>
                         <td>
                             <strong>NBC</strong>
                             <span class="show h6">Channel 5</span>
-                        </td>
-                        <td colspan="5">Football: Saints at Cowboys</td>
-                        <td colspan="3">Local Programming</td>
+                        </td>';
+buildRow('NBC');
+echo'
                     </tr>
                     <tr>
                         <td>
                             <strong>FOX</strong>
                             <span class="show h6">Channel 4</span>
-                        </td>
-                        <td colspan="2">Brookly Nine-Nine</td>
-                        <td colspan="2">Family Guy</td>
-                        <td colspan="2">The Last Man on Earth</td>
-                        <td colspan="2">Local Programming</td>
+                        </td>';
+buildRow('FOX');
+echo'
                     </tr>
                     <tr>
                         <td>
                             <strong>PBS</strong>
                             <span class="show h6">Channel 11</span>
-                        </td>
-                        <td colspan="2">Indian Summers On Masterpiece</td>
-                        <td colspan="1">The Widower</td>
-                        <td colspan="2">Ask This Old House</td>
-                        <td colspan="3">Hometime</td>
+                        </td>';
+buildRow('PBS');
+echo'
                     </tr>
                 </tbody>
             </table>
