@@ -14,6 +14,9 @@ if(isset($_POST['login']))
 if(isset($_POST['register']))
     register();
 
+if(isset($_POST['recovery']))
+    recovery();
+
 function login(){
     global $con;
     try {
@@ -22,16 +25,15 @@ function login(){
         $sql->bindParam(':password', $_POST['password']);
         $sql->execute();
         if($sql->rowCount() == 1){
+            session_start();
             $_SESSION['username'] = $_POST['username'];
             $_SESSION['loggedin'] = true;
             //getting favorites
-            $sql =$con->query("SELECT favorites FROM `users` WHERE `username` = '".$_POST['username']."'");
-            //$sql->bindParam(':username', $_POST['username']);
+            $sql = $con->prepare("SELECT favorites FROM `users` WHERE `username` = :username");
+            $sql->bindParam(':username', $_POST['username']);
             $result = $sql->fetch();
             $_SESSION['favorites'] = explode(',',$result['favorites']);
-
             header("Location: /phase5/");
-            exit();
         }
     } catch(PDOException $e){
         echo $e->getMessage();
@@ -62,5 +64,11 @@ function register(){
         echo 'alert ("passwords do not match");';
         echo '</script>';
     }
+}
+
+function recovery(){
+        echo '<script type="text/javascript">';
+        echo 'alert ("An email with recovery instructions has been sent to you");';
+        echo '</script>';
 }
 ?>

@@ -9,6 +9,9 @@ if(isset($_SESSION['loggedin'])){
 } else {
     header("Location: /phase5/pages/login.php");
 }
+
+if(isset($_GET['remove']))
+    removeFavorite($_GET['remove']);
 include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
 // Body content
 ?>
@@ -30,9 +33,7 @@ include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
             <div class="panel-heading">
                 <h4>Upcoming Favorites</h4>
             </div>
-            <div class="panel-body">
-                <p> stuff </p>
-            </div>
+            <?php buildUpcomingFavorites(); ?>
         </div>
 	</div>
 	<div class="col-md-4">

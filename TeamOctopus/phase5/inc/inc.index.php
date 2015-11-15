@@ -200,3 +200,87 @@ function build_guide(){
             </table>
         </div>';
 }
+
+function getFavorites($username) {
+    /*
+        Queries the database for all the user's favorites
+    */
+    global $con;
+    try {
+        $sql = "SELECT `favorites` FROM `users` WHERE username = :username";
+        $sql = $con->prepare($sql);
+        $sql->bindParam(":username", $username);
+        $sql->execute();
+        buildFavorites($sql->fetch());
+    } catch (PDOException $e) {
+        echo $e;
+    }
+}
+
+function getTimeForFavorites($favorite){
+    /*
+        Queries the database for title id and time of the favorite
+    */
+    global $con;
+    try {
+        $sql = "SELECT `ID`, 'TIME' FROM `titles` WHERE TITLE = :title";
+        $sql = $con->prepare($sql);
+        $sql->bindParam(":title", $favorite);
+        $sql->execute();
+        return($sql->fetch());
+    } catch (PDOException $e) {
+        echo $e;
+    }
+}
+
+function buildFavorites($favorites){
+    /*
+        Builds the list of favorites, linking their id and
+        showing the next air time.
+    */
+    $favorites = explode(",", $favorites['favorites']);
+    foreach($favorites as $favorite){
+        $titleInfo = getTimeForFavorites($favorite);
+        echo "<div class=\"panel-body\">\n                    
+                    <p class=\"well\"><a href=\"/phase5/pages/info.php?id=$titleInfo[0]\">
+                    $favorite</a> on at $titleInfo[1]</p>\n
+              </div>\n";
+    }
+}
+
+function getSports(){
+    /*
+        Queries the database for all the games in the database
+    */
+    global $con;
+    try {
+        $sql="SELECT * FROM `sports`";
+        $sql = $con->prepare($sql);
+        $sql->execute();
+        buildSportsTable($sql->fetchAll());
+    } catch (PDOException $e) {
+        echo $e;
+    }
+}
+
+function buildSportsTable($games) {
+    echo "
+        <table class='table table-striped'>
+            <tr>
+                <th>Team</th>
+                <th>vs</th>
+                <th>Team</th>
+                <th>Score</th>
+                <th>Time</th>
+            </tr>";
+    foreach($games as $game){
+        echo "<tr>";
+        echo "<td>" . $game['TEAM_1'] . "</td>";
+        echo "<td> @ </td>";
+        echo "<td>" . $game['TEAM_2'] . "</td>";
+        echo "<td>" . $game['SCORE'] . "</td>";
+        echo "<td>" . $game['TIME'] . "</td>";
+        echo "</tr>";
+    }
+    echo "</table>";
+}

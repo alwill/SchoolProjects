@@ -30,16 +30,6 @@ include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
         <div class="col-xs-6 col-md-4">
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h4>More Stuff 1</h4>
-                </div>
-                <div class="panel-body">
-                    <p>Content</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-6 col-md-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
                     <h4>Recent Comments</h4>
                 </div>
                 <?php buildRecentComments(getRecentComments()); ?>
@@ -47,24 +37,22 @@ include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
         </div>
     </div>
     <div class="row">
+        <?php if(isset($_SESSION['loggedin'])) : ?>
         <div class="col-xs-6 col-md-4">
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h4>Favorites?</h4>
+                    <h4>Your Favorites</h4>
                 </div>
-                <div class="panel-body">
-                    <p>Content</p>
-                </div>
+                <?php buildFavorites(getFavorites($_SESSION['username'])); ?>
             </div>
         </div>
+        <?php endif; ?>
         <div class="col-xs-12 col-md-8">
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h4>Sports?</h4>
+                    <h4>Sports</h4>
                 </div>
-                <div class="panel-body">
-                    <p>Content</p>
-                </div>
+                <?php getSports(); ?>
             </div>
         </div>
     </div>

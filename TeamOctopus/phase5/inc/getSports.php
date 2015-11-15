@@ -12,7 +12,7 @@ try {
 $param = $_GET['sport'];
 if($param == "current"){
     $sql="SELECT * FROM sports WHERE time <> 'final'";
-    $caption = "Games curretnly airing";
+    $caption = "Games currently airing";
 }else {
     $sql = "SELECT * FROM sports WHERE sport = (:sport)";
     $caption = $param;
