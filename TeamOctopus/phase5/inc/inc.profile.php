@@ -25,6 +25,7 @@ function buildUserComments($comments) {
     /*
         Builts the recent user comments box with what getUserComments() returned
     */
+
     foreach($comments as $comment){
         echo "<div class=\"panel-body\">\n
                     <p><a href=\"/phase5/pages/info.php?id=$comment[2]\">$comment[1]</a></p>\n
@@ -48,11 +49,15 @@ function getUserFavorites() {
 
 function buildUserFavorites($favorites) {
     $favorites = explode(",", $favorites['favorites']);
+
     foreach($favorites as $favorite){
-        echo "<div class=\"panel-body\">\n                    
+        if($favorite == ""){}
+        else {
+            echo "<div class=\"panel-body\">\n
                     <p class=\"well\">$favorite
                     <a class=\"pull-right\" href=\"/phase5/pages/profile.php?remove=$favorite\">Remove</a></p>\n
               </div>\n";
+        }
     }
 }
 

@@ -26,7 +26,7 @@ include_once("$_SERVER[DOCUMENT_ROOT]/phase5/inc/header.php");
                 <h4>Favorites</h4>
             </div>
             <?php buildUserFavorites(getUserFavorites()); ?>
-            </div>		
+            </div>
 		</div>
 	<div class="col-md-4">
 		<div class="panel panel-primary">
