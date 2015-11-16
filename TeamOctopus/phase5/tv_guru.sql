@@ -13,7 +13,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `tv_guru`
 --
-
+CREATE DATABASE tv_guru;
+USE tv_guru;
 -- --------------------------------------------------------
 
 --
@@ -23,7 +24,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `comments` (
 `id` int(11) NOT NULL,
   `title_id` int(11) NOT NULL,
-  `title` varchar(30) NOT NULL,
+  `title` varchar(40) NOT NULL,
   `username` varchar(30) NOT NULL,
   `comment` varchar(300) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;

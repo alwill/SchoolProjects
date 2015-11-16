@@ -1,5 +1,5 @@
 <?php
-
+//getting database ready
 include("$_SERVER[DOCUMENT_ROOT]/phase5/db/tvguruDB.php");
 try {
     $con = new PDO(DB_CONNECTION_STRING, DB_USER, DB_PWD);
@@ -8,6 +8,7 @@ try {
     echo $e->getMessage();
 }
 
+//getting comments from the database based on username
 function getUserComments() {
     global $con;
     try {
@@ -34,6 +35,7 @@ function buildUserComments($comments) {
     }
 }
 
+//getting favorites from the databse
 function getUserFavorites() {
     global $con;
     try {
@@ -47,6 +49,7 @@ function getUserFavorites() {
     }
 }
 
+//building favorites list
 function buildUserFavorites($favorites) {
     $favorites = explode(",", $favorites['favorites']);
 
@@ -105,6 +108,7 @@ function buildUpcomingFavorites()
     }
 }
 
+//removing a favorite
 function removeFavorite($favorite){
     //session_start();
     $_SESSION['favorites'] = array_diff($_SESSION['favorites'], array($_GET['remove']));

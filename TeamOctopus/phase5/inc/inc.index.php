@@ -1,5 +1,10 @@
 <?php
+//Index page include
+
+//set our time zone
 date_default_timezone_set("America/Chicago");
+
+//setting up our databse
 include("$_SERVER[DOCUMENT_ROOT]/phase5/db/tvguruDB.php");
 try {
     $con = new PDO(DB_CONNECTION_STRING, DB_USER, DB_PWD);
@@ -268,6 +273,9 @@ function getSports(){
 }
 
 function buildSportsTable($games) {
+	/*
+        builds a table to show current scores
+    */
     echo "
         <table class='table table-striped'>
             <tr>

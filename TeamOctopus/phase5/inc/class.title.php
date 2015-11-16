@@ -1,4 +1,5 @@
 <?php
+//this class is for an object for a title
 class Title{   
     var $id;
     var $title;

@@ -1,5 +1,6 @@
 <?php
 
+//getting the databse ready
 include("$_SERVER[DOCUMENT_ROOT]/phase5/db/tvguruDB.php");
 try {
     $con = new PDO(DB_CONNECTION_STRING, DB_USER, DB_PWD);
@@ -8,6 +9,7 @@ try {
     echo $e->getMessage();
 }
 
+//builds top show table
 function buildTopShowsTable()
 {
     global $con;
@@ -41,6 +43,7 @@ function buildTopShowsTable()
     $sql->closeCursor();
 }
 
+//builindg a table showing the top shows that are on netflix
 function buildTopNetflix()
 {
     global $con;
@@ -70,7 +73,7 @@ function buildTopNetflix()
     $sql->closeCursor();
 }
 
-
+//builindg a table showing the top shows that are on prime
 function buildTopPrime()
 {
     global $con;

@@ -1,3 +1,4 @@
+<!-- Footer to include at the bottom of all pages -->
 <footer class="panel-footer">
   <div class="container">
     <p class="text-muted">&#169; 2015 Team Octopus Interactive Inc. All rights reserved.</p>
