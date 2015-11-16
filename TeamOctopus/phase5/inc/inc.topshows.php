@@ -11,7 +11,7 @@ try {
 function buildTopShowsTable()
 {
     global $con;
-    $sql="SELECT * FROM titles a, comments b where a.type = 'tv_series' and a.NETFLIX = '0' and a.PRIME = '0' and a.TITLE = b.Title group by a.Title order by Count(b.title) desc";
+    $sql="SELECT a.* FROM titles a, comments b where a.type = 'tv_series' and a.NETFLIX = '0' and a.PRIME = '0' and a.TITLE = b.Title group by a.Title order by Count(b.title) desc";
     $caption = "Trending Shows Today";
 
     $sql = $con->prepare($sql);
@@ -29,7 +29,7 @@ function buildTopShowsTable()
 </tr>";
     foreach($sql->fetchAll() as $row){
         echo "<tr>";
-        echo "<td>" . $row['TITLE'] . "</td>";
+        echo "<td>" ."<a href = '/phase5/pages/info.php?id= " . $row['ID']. " '>" . $row['TITLE'] . "</td>";
         echo "<td>" . $row['RATING'] .  "/10" . "</td>";
         echo "<td>" . $row['NETWORK'] . "</td>";
         echo "<td>" . date("H:i A",strtotime($row['TIME'])) . "</td>";
@@ -60,7 +60,7 @@ function buildTopNetflix()
 </tr>";
     foreach($sql->fetchAll() as $row){
         echo "<tr>";
-        echo "<td>" . $row['TITLE'] . "</td>";
+        echo "<td>" ."<a href = '/phase5/pages/info.php?id= " . $row['ID']. " '>" . $row['TITLE'] . "</td>";
         echo "<td>" . $row['RATING'] . "/10" . "</td>";
         echo "<td>" . $row['RUNTIME'] . "</td>";
         echo "<td>" . $row['PARENTAL_GUIDE'] . "</td>";
@@ -90,7 +90,7 @@ function buildTopPrime()
 </tr>";
     foreach($sql->fetchAll() as $row){
         echo "<tr>";
-        echo "<td>" . $row['TITLE'] . "</td>";
+        echo "<td>" ."<a href = '/phase5/pages/info.php?id= " . $row['ID']. " '>" . $row['TITLE'] . "</td>";
         echo "<td>" . $row['RATING'] .  "/10" .  "</td>";
         echo "<td>" . $row['RUNTIME'] . "</td>";
         echo "<td>" . $row['PARENTAL_GUIDE'] . "</td>";

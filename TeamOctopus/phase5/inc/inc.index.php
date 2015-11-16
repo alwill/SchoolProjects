@@ -254,7 +254,7 @@ function getSports(){
     */
     global $con;
     try {
-        $sql="SELECT * FROM `sports`";
+        $sql="SELECT * FROM `sports` a where a.TIME <> 'FINAL' LIMIT 5 ";
         $sql = $con->prepare($sql);
         $sql->execute();
         buildSportsTable($sql->fetchAll());
@@ -272,6 +272,7 @@ function buildSportsTable($games) {
                 <th>Team</th>
                 <th>Score</th>
                 <th>Time</th>
+                <th>Sport</th>
             </tr>";
     foreach($games as $game){
         echo "<tr>";
@@ -280,6 +281,7 @@ function buildSportsTable($games) {
         echo "<td>" . $game['TEAM_2'] . "</td>";
         echo "<td>" . $game['SCORE'] . "</td>";
         echo "<td>" . $game['TIME'] . "</td>";
+        echo "<td>" . $game['SPORT'] . "</td>";
         echo "</tr>";
     }
     echo "</table>";
