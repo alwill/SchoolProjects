@@ -32,7 +32,7 @@ function buildTopShowsTable()
         echo "<td>" ."<a href = '/phase5/pages/info.php?id= " . $row['ID']. " '>" . $row['TITLE'] . "</td>";
         echo "<td>" . $row['RATING'] .  "/10" . "</td>";
         echo "<td>" . $row['NETWORK'] . "</td>";
-        echo "<td>" . date("H:i A",strtotime($row['TIME'])) . "</td>";
+        echo "<td>" . date("h:i A",strtotime($row['TIME'])) . "</td>";
         echo "<td>" . $row['RUNTIME'] . "</td>";
         echo "<td>" . $row['PARENTAL_GUIDE'] . "</td>";
         echo "</tr>";

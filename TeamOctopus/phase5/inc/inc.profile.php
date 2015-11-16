@@ -90,7 +90,7 @@ function buildUpcomingFavorites()
             $titleInfo = getTimeForFavorites($favorite);
             echo "<div class=\"panel-body\">\n
                     <p class=\"well\"><a href=\"/phase5/pages/info.php?id=$titleInfo[0]\">
-                    $favorite</a> on at " . date("H:i A", strtotime($titleInfo[1])) . "</p>\n
+                    $favorite</a> on at " . date("h:i A", strtotime($titleInfo[1])) . "</p>\n
               </div>\n";
         }
     }
