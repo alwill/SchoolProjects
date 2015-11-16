@@ -233,18 +233,22 @@ function getTimeForFavorites($favorite){
     }
 }
 
-function buildFavorites($favorites){
+function buildFavorites($favorites)
+{
     /*
         Builds the list of favorites, linking their id and
         showing the next air time.
     */
     $favorites = explode(",", $favorites['favorites']);
-    foreach($favorites as $favorite){
-        $titleInfo = getTimeForFavorites($favorite);
-        echo "<div class=\"panel-body\">\n                    
+    foreach ($favorites as $favorite) {
+        if ($favorite == "") {
+        } else {
+            $titleInfo = getTimeForFavorites($favorite);
+            echo "<div class=\"panel-body\">\n
                     <p class=\"well\"><a href=\"/phase5/pages/info.php?id=$titleInfo[0]\">
-                    $favorite</a> on at $titleInfo[1]</p>\n
+                    $favorite</a> on at " . date("H:i A", strtotime($titleInfo[1])) . "</p>\n
               </div>\n";
+        }
     }
 }
 
