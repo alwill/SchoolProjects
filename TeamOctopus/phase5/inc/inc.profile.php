@@ -67,7 +67,7 @@ function getTimeForFavorites($favorite){
     */
     global $con;
     try {
-        $sql = "SELECT `ID`, TIME FROM `titles` WHERE TITLE = :title LIMIT 5";
+        $sql = "SELECT `ID`, TIME, `TYPE` FROM `titles` WHERE TITLE = :title LIMIT 5";
         $sql = $con->prepare($sql);
         $sql->bindParam(":title", $favorite);
         $sql->execute();
@@ -88,16 +88,25 @@ function buildUpcomingFavorites()
         if ($favorite == "") {
         } else {
             $titleInfo = getTimeForFavorites($favorite);
+            if($titleInfo[2] == 'tv_series'){
+            	$daysoftheweek = array("Mondays", "Teusdays", "Wednesdays", "Thursdays", "Fridays", "Saturdays", "Sundays");
+            	echo "<div class=\"panel-body\">\n
+                    <p class=\"well\"><a href=\"/phase5/pages/info.php?id=$titleInfo[0]\">
+                    $favorite</a> on " . $daysoftheweek[mt_rand(0,6)] . " at " .date("h:i A", strtotime($titleInfo[1])) . "</p>\n
+              </div>\n";
+            }
+            else{
             echo "<div class=\"panel-body\">\n
                     <p class=\"well\"><a href=\"/phase5/pages/info.php?id=$titleInfo[0]\">
                     $favorite</a> on at " . date("h:i A", strtotime($titleInfo[1])) . "</p>\n
               </div>\n";
+          	}
         }
     }
 }
 
 function removeFavorite($favorite){
-    session_start();
+    //session_start();
     $_SESSION['favorites'] = array_diff($_SESSION['favorites'], array($_GET['remove']));
     $favorites = implode(",", $_SESSION['favorites']);
     try {
