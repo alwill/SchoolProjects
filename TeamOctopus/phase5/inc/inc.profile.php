@@ -1,5 +1,5 @@
 <?php
-//getting database ready
+
 include("$_SERVER[DOCUMENT_ROOT]/phase5/db/tvguruDB.php");
 try {
     $con = new PDO(DB_CONNECTION_STRING, DB_USER, DB_PWD);
@@ -8,7 +8,6 @@ try {
     echo $e->getMessage();
 }
 
-//getting comments from the database based on username
 function getUserComments() {
     global $con;
     try {
@@ -35,7 +34,6 @@ function buildUserComments($comments) {
     }
 }
 
-//getting favorites from the databse
 function getUserFavorites() {
     global $con;
     try {
@@ -49,7 +47,6 @@ function getUserFavorites() {
     }
 }
 
-//building favorites list
 function buildUserFavorites($favorites) {
     $favorites = explode(",", $favorites['favorites']);
 
@@ -91,24 +88,19 @@ function buildUpcomingFavorites()
         if ($favorite == "") {
         } else {
             $titleInfo = getTimeForFavorites($favorite);
+            $daysoftheweek = array("Monday", "Teusday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday");
+            $dayoftitle = $daysoftheweek[mt_rand(0,6)] ;
             if($titleInfo[2] == 'tv_series'){
-            	$daysoftheweek = array("Mondays", "Teusdays", "Wednesdays", "Thursdays", "Fridays", "Saturdays", "Sundays");
-            	echo "<div class=\"panel-body\">\n
-                    <p class=\"well\"><a href=\"/phase5/pages/info.php?id=$titleInfo[0]\">
-                    $favorite</a> on " . $daysoftheweek[mt_rand(0,6)] . " at " .date("h:i A", strtotime($titleInfo[1])) . "</p>\n
-              </div>\n";
+            	$dayoftitle .= "s";
             }
-            else{
             echo "<div class=\"panel-body\">\n
                     <p class=\"well\"><a href=\"/phase5/pages/info.php?id=$titleInfo[0]\">
-                    $favorite</a> on at " . date("h:i A", strtotime($titleInfo[1])) . "</p>\n
+                    $favorite</a> on " . $dayoftitle . " at " .date("h:i A", strtotime($titleInfo[1])) . "</p>\n
               </div>\n";
-          	}
         }
     }
 }
 
-//removing a favorite
 function removeFavorite($favorite){
     //session_start();
     $_SESSION['favorites'] = array_diff($_SESSION['favorites'], array($_GET['remove']));

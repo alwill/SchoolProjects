@@ -1,6 +1,5 @@
 <?php
 
-//gets database ready
 include("$_SERVER[DOCUMENT_ROOT]/phase5/db/tvguruDB.php");
 try {
     $con = new PDO(DB_CONNECTION_STRING, DB_USER, DB_PWD);
@@ -9,7 +8,7 @@ try {
     echo $e->getMessage();
 }
 
-//getting sports based on whether or not the game is currently going on
+
 $param = $_GET['sport'];
 if($param == "current"){
     $sql="SELECT * FROM sports WHERE time <> 'final'";
@@ -22,7 +21,6 @@ $sql = $con->prepare($sql);
 $sql->bindParam(':sport',$_GET['sport']);
 $sql->execute();
 
-//create table for the sports
 echo "<table class='table table-striped'>
 <caption>$caption</caption>
 <tr>

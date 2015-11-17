@@ -1,5 +1,5 @@
 <?php
-//getting database ready
+
 include("$_SERVER[DOCUMENT_ROOT]/phase5/db/tvguruDB.php");
 try {
     $con = new PDO(DB_CONNECTION_STRING, DB_USER, DB_PWD);
@@ -17,7 +17,6 @@ if(isset($_POST['register']))
 if(isset($_POST['recovery']))
     recovery();
 
-//checks credentials based on input comapred to the databse
 function login(){
     global $con;
     try {
@@ -41,7 +40,6 @@ function login(){
     }
 }
 
-//adding registration to the databse
 function register(){
     if($_POST["regPassword"] == $_POST["regRepassword"]){
         global $con;
@@ -68,7 +66,6 @@ function register(){
     }
 }
 
-//recovery alert when you are submitting with email
 function recovery(){
         echo '<script type="text/javascript">';
         echo 'alert ("An email with recovery instructions has been sent to you");';

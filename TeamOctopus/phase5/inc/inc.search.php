@@ -1,5 +1,5 @@
 <?php
-//getting the database ready
+      
 include("$_SERVER[DOCUMENT_ROOT]/phase5/db/tvguruDB.php");
 try {
     $con = new PDO(DB_CONNECTION_STRING, DB_USER, DB_PWD);
@@ -46,7 +46,6 @@ function query_title() {
     }
 }
 
-//building the resutls table
 function build_table($results) {
     $title = $_GET['title'];
     $table = '<h3 class="page-header">Displaying Results for: "' . $title . '"</h3>';

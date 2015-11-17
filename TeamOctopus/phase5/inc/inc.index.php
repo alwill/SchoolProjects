@@ -1,10 +1,5 @@
 <?php
-//Index page include
-
-//set our time zone
 date_default_timezone_set("America/Chicago");
-
-//setting up our databse
 include("$_SERVER[DOCUMENT_ROOT]/phase5/db/tvguruDB.php");
 try {
     $con = new PDO(DB_CONNECTION_STRING, DB_USER, DB_PWD);
@@ -228,7 +223,7 @@ function getTimeForFavorites($favorite){
     */
     global $con;
     try {
-        $sql = "SELECT `ID`, 'TIME' FROM `titles` WHERE TITLE = :title";
+        $sql = "SELECT `ID`, 'TIME', `TYPE` FROM `titles` WHERE TITLE = :title";
         $sql = $con->prepare($sql);
         $sql->bindParam(":title", $favorite);
         $sql->execute();
@@ -249,9 +244,14 @@ function buildFavorites($favorites)
         if ($favorite == "") {
         } else {
             $titleInfo = getTimeForFavorites($favorite);
+            $daysoftheweek = array("Monday", "Teusday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday");
+            $dayoftitle = $daysoftheweek[mt_rand(0,6)] ;
+            if($titleInfo[2] == 'tv_series'){
+            	$dayoftitle .= "s";
+            }
             echo "<div class=\"panel-body\">\n
                     <p class=\"well\"><a href=\"/phase5/pages/info.php?id=$titleInfo[0]\">
-                    $favorite</a> on at " . date("h:i A", strtotime($titleInfo[1])) . "</p>\n
+                    $favorite</a> on " . $dayoftitle . " at " .date("h:i A", strtotime($titleInfo[1])) . "</p>\n
               </div>\n";
         }
     }
@@ -273,9 +273,6 @@ function getSports(){
 }
 
 function buildSportsTable($games) {
-	/*
-        builds a table to show current scores
-    */
     echo "
         <table class='table table-striped'>
             <tr>

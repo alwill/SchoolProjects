@@ -6,7 +6,6 @@
  * Time: 4:14 PM
  */
 
-//getting the database ready
 include("$_SERVER[DOCUMENT_ROOT]/phase5/db/tvguruDB.php");
 try {
     $con = new PDO(DB_CONNECTION_STRING, DB_USER, DB_PWD);
@@ -21,7 +20,6 @@ if(isset($_POST['comment']))
 if(isset($_POST['refresh'])) 
     buildCommentSection(getComments());
 
-//builing the favorite sports table
 function buildFavSportTable()
 {
     global $con;
@@ -57,7 +55,6 @@ function buildFavSportTable()
 
 }
 
-//getting comments for games
 function getComments()
 {
     global $con;
@@ -69,7 +66,6 @@ function getComments()
 
 }
 
-//posting a comment to the sports
 function postComment($comment)
 {
     session_start();
@@ -87,7 +83,6 @@ function postComment($comment)
     buildCommentSection(getComments());
 }
 
-//building a list of comments
 function buildCommentSection($comments) {
     $commentSection = "";
     if(is_array($comments) || is_object($comments)){

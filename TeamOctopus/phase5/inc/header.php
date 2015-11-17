@@ -1,4 +1,3 @@
-<!-- Header to include at the top of all pages -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,7 +41,6 @@
               </form>
             </div>
             <ul class="nav navbar-nav navbar-right">
-              <!-- checks to see if you are logged in or not for the login button -->
               <li class="pull-right"><a href=<?= isset($loggedin) ? "/phase5/pages/logout.php" : "/phase5/pages/login.php"?>><?= isset($loggedin) ? "Logout" : "Login"?></a></li>              
             </ul>           
           </div><!--/.nav-collapse --> 

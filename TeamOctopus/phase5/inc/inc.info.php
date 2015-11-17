@@ -1,6 +1,5 @@
 <?php
 include("class.title.php");
-//getting the database ready
 include("$_SERVER[DOCUMENT_ROOT]/phase5/db/tvguruDB.php");
 try {
     $con = new PDO(DB_CONNECTION_STRING, DB_USER, DB_PWD);
@@ -26,7 +25,6 @@ if(isset($_POST['comment']))
 
 $title = new Title;
 
-//function to add something to favorites
 function favorite() {
     session_start();
     global $con;
@@ -45,7 +43,6 @@ function favorite() {
     echo $_SESSION['title'] . " added to favorites";
 }
 
-//function to remove something from favorites
 function unfavorite() {
     session_start();
     $_SESSION['favorites'] = array_diff($_SESSION['favorites'], array($_SESSION['title']));
@@ -64,7 +61,6 @@ function unfavorite() {
     echo $_SESSION['title'] . " removed from favorites";
 }
 
-//funtion for posting a comment to a page
 function postComment($comment) {    
     session_start();
     global $con;
@@ -83,7 +79,6 @@ function postComment($comment) {
     buildCommentSection(getComments());
 }
 
-//gets comments from the databse base on the title
 function getComments() {
     global $con;
     try {
@@ -97,7 +92,6 @@ function getComments() {
     }
 }
 
-//builds the comments based on array of comments
 function buildCommentSection($comments) {
     $commentSection = "";
     if(is_array($comments) || is_object($comments)){
@@ -140,8 +134,6 @@ function buildTitle($titleData) {
     $title->network = $titleData['NETWORK'];
 }
 
-
-//getters
 function getPageTitle() {
     global $title;
     return $title->title;
