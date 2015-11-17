@@ -35,6 +35,11 @@ function login(){
             $_SESSION['favorites'] = explode(',',$result['favorites']);
             header("Location: /phase5/");
         }
+        else{
+        	echo '<script type="text/javascript">';
+        	echo 'alert ("Wrong username/password combination");';
+        	echo '</script>';
+        }
     } catch(PDOException $e){
         echo $e->getMessage();
     }
@@ -61,14 +66,14 @@ function register(){
     }
     else{
         echo '<script type="text/javascript">';
-        echo 'alert ("passwords do not match");';
+        echo 'alert ("Passwords do not match in password and confirm password fields.");';
         echo '</script>';
     }
 }
 
 function recovery(){
         echo '<script type="text/javascript">';
-        echo 'alert ("An email with recovery instructions has been sent to you");';
+        echo 'alert ("An email with recovery instructions has been sent to you.");';
         echo '</script>';
 }
 ?>
